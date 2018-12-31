@@ -66,7 +66,7 @@ public class TestBase {
 		try {
 			//FileUtils.copyFile(scrFile, new File("E:\\WorkSpace\\CRMProject\\screenshots\\testfailure.jpg")); //will overwrite the jpg with latest failure shots.
 			//FileUtils.copyFile(scrFile, new File("E:\\WorkSpace\\CRMProject\\screenshots\\"+"failshot_"+this.getClass().getName()+"_"+".jpg"));
-			FileUtils.copyFile(scrFile, new File("D:\\WorkSpace\\EKalTestNgScreenshot\\"+testMethodName+"_"+".jpg"));
+			FileUtils.copyFile(scrFile, new File("D:\\WorkSpace\\Ekal\\EkalW\\Screenshots\\"+testMethodName+"_"+".jpg"));
 			} catch (IOException e) {e.printStackTrace();}
 	}
 	

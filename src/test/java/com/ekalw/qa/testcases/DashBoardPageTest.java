@@ -1,5 +1,7 @@
 package com.ekalw.qa.testcases;
 
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -23,11 +25,12 @@ public class DashBoardPageTest extends TestBase {
 	public void setUp() throws InterruptedException{
 		
 		initialization();
-		welcomepage = new WelcomePage(); //so that we can call all methods of signInPage class
-		signIn = new SignInPage();
+		welcomepage=new WelcomePage();
+		signIn = new SignInPage(); //so that we can call all methods of signInPage class
 		
-		//dashBoardPage=signIn.signInWithSimsId(prop.getProperty("username"), prop.getProperty("password"));
-		dashBoardPage=signIn.signInWithGoogleId(prop.getProperty("username"), prop.getProperty("password"));
+		signIn = welcomepage.validateSignInPage();  //First takes to sign in page
+		dashBoardPage = signIn.signInWithSimsId(prop.getProperty("username"), prop.getProperty("password")); //now sign in page takes to dashboard
+	    //dashBoardPage=signIn.signInWithGoogleId(prop.getProperty("username"), prop.getProperty("password"));
 		
 	}
 	
@@ -35,9 +38,14 @@ public class DashBoardPageTest extends TestBase {
 	public void test(){
 		
 		System.out.println("Test comp");
+		Assert.assertEquals(true, false);
 	}
 	
-	
+	@AfterMethod
+	public void tearDown() throws InterruptedException {
+		Thread.sleep(5000);
+		driver.quit();
+	}
 	
 	
 
