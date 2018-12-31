@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="EkalW" verbose="1" >
+    
+
+<listeners>
+	<listener class-name="com.ekalw.qa.extentReporterListener.ExtentReportNG"></listener>
+</listeners>
+
+  <test name="EkalW TestCases" >
+    <classes>
+              <class name="com.ekalw.qa.base.ScreenshotTest" />
+     </classes>
+  </test>
+ 
+</suite>
