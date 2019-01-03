@@ -2,6 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [EkalW]">
   <listeners>
+    <listener class-name="com.ekalw.qa.analyzer.MyTransformer"/>
     <listener class-name="com.ekalw.qa.extentReporterListener.ExtentReportNG"/>
   </listeners>
   <test thread-count="5" name="EkalW TestCases(failed)">
@@ -13,6 +14,13 @@
           <include name="takeScreenshotDemo"/>
         </methods>
       </class> <!-- com.ekalw.qa.base.ScreenshotTest -->
+      <class name="com.ekalw.qa.testcases.MyRetryTest">
+        <methods>
+          <include name="test1"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.ekalw.qa.testcases.MyRetryTest -->
     </classes>
   </test> <!-- EkalW TestCases(failed) -->
 </suite> <!-- Failed suite [EkalW] -->

@@ -44,6 +44,16 @@ public class WelcomePageTest extends TestBase {
 	}
 	
 	@Test(priority=2)
+	public void validatePageLoadedTest(){
+		
+		boolean b=welcomepage.validatePageLoaded();
+		//Assert.assertTrue(b, pageLoadedText);
+		Assert.assertTrue(b);
+	}
+	
+	
+	//@Test(enabled = false)
+	@Test(priority=3)
 	public void validateSignInPageTest(){
 		
 		signIn = welcomepage.validateSignInPage();

@@ -70,32 +70,51 @@ public class TestBase {
 			} catch (IOException e) {e.printStackTrace();}
 	}
 	
-   public static void clickOn(WebDriver driver,WebElement locator,int timeout){
+	   //* Waits for given element to be clickable nvn
+	   public static void clickOn(WebDriver driver,WebElement locator,int timeout){
 		
 		new WebDriverWait(driver, timeout).ignoring(StaleElementReferenceException.class).until(ExpectedConditions.elementToBeClickable(locator));
 		
 		//in test-case just call clickOn(driver,driver.findElement(By.id(someid)),20); //will wait for 20 sec to load login button.
 		
-		//OR syntax:-
+		//OR use below syntax:-
 		 //WebDriverWait wait = new WebDriverWait(driver, 10);
-
 		// WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id(>someid>)));
 	}
+	   //WaitUtilities
+	   
+	   //* Waits for a given element to be visible
+	   public static void waitForElementVisible(WebDriver driver, WebElement e){
+			WebDriverWait wait = new WebDriverWait(driver, 60);
+			WebElement element = wait.until(ExpectedConditions.visibilityOf(e));
+			
+			//in test-case just call waitForElementVisible(driver, driver.findElement(By.xpath(".//span[contains(text(),'Login With SIMS ID')]")));
+		}
+	   
+	   //*Waits for a given element to be selected
+	   public static void waitForElementSelected(WebDriver driver, WebElement e){
+			WebDriverWait wait = new WebDriverWait(driver, 60);
+			Boolean bool = wait.until(ExpectedConditions.elementToBeSelected(e));
+		}
+	   
+	   
+	   //* Waits for the page to have a given title
+	   public static boolean waitForPageTitle(WebDriver driver, String title){
+			WebDriverWait wait = new WebDriverWait(driver, 60);
+			return wait.until(ExpectedConditions.titleContains(title));
+		}
+	   
+	   //*Sleep script for the specified length Generally for testcase trial
+	   public static void sleep(long length){
+		    try {
+		        Thread.sleep(length);
+		    } catch (InterruptedException e) {
+		        e.printStackTrace();
+		    }
+		}
+	   
+	   
    
-   //Vishal methodshttps://www.testingexcellence.com/page-object-framework-java-webdriver/
-   
-   public static WebDriverWait wait;
-   
-   public static void waitForElementToAppear(By locator) {
-       wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-   }
-   
-   public void waitForElementToDisappear(By locator) {
-       wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
-   }
-
-   public void waitForTextToDisappear(By locator, String text) {
-       wait.until(ExpectedConditions.not(ExpectedConditions.textToBe(locator, text)));
-   }
+  
 	
 }

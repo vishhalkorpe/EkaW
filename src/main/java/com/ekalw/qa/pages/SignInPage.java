@@ -68,11 +68,16 @@ public class SignInPage extends TestBase{
 	
 	//Actions
 	
+	//Verify that the page title
+		
 	public String validateSignInPageTitle(){
 		
 		return driver.getTitle();
 	}
 	
+	 /**
+     * Click on Accept Button.
+     */
 	public boolean clickAcceptCookiesButton(){
 		
 		acceptCookiesButton.click();
@@ -80,11 +85,16 @@ public class SignInPage extends TestBase{
 		
 	}
 	
+	//Verify that the page loaded completely.
+	
 	public boolean validateSIMSImage(){
 		return simsLogo.isDisplayed();
 	}
 	
-		
+	
+	/**
+     * Click on Sign In With SimsId.
+     */
 	public DashBoardPage signInWithSimsId(String un, String pwd) throws InterruptedException{
 		
 		signInWithSimsId.click();
@@ -96,6 +106,8 @@ public class SignInPage extends TestBase{
 		
 		return new DashBoardPage();
 	}
+	
+	 // Click on Forgotten Your Sims Id Password Link.
 	
 	public boolean forgetPasswordForSignInWithSimsId() throws InterruptedException{
 		signInWithSimsId.click();
@@ -162,6 +174,10 @@ public class SignInPage extends TestBase{
 				System.out.println("Password tab test");
 				return errormsg.isDisplayed();
 	}
+	
+	 /**
+     * Click on Sign In With Google Link.
+     */
 	
 	public DashBoardPage signInWithGoogleId(String email_id,String email_password) throws InterruptedException{
 		

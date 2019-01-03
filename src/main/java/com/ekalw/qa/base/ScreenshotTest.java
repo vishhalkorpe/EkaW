@@ -1,5 +1,6 @@
 package com.ekalw.qa.base;
 
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -7,10 +8,16 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.ekalw.qa.pages.WelcomePage;
-import com.ekalw.qa.testNGListener.CustomListener;
+import com.ekalw.qa.util.TestNGCustomListener;
 
-@Listeners(CustomListener.class)
+@Listeners(TestNGCustomListener.class)
 public class ScreenshotTest extends TestBase {
+	
+	public ScreenshotTest(){
+		
+		super();
+	}
+	
 	
 	@BeforeMethod
 	public void setUp() {
@@ -21,8 +28,10 @@ public class ScreenshotTest extends TestBase {
 	
 	@Test(priority=1)
 	public void takeScreenshotDemo(){
-		Assert.assertEquals(false, true);
-	}
+		
+		Assert.assertEquals(false,true);
+			
+		}
 	
 	
 	

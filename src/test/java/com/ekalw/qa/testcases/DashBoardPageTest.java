@@ -3,13 +3,16 @@ package com.ekalw.qa.testcases;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.ekalw.qa.base.TestBase;
 import com.ekalw.qa.pages.DashBoardPage;
 import com.ekalw.qa.pages.SignInPage;
 import com.ekalw.qa.pages.WelcomePage;
+import com.ekalw.qa.util.TestNGCustomListener;
 
+@Listeners(TestNGCustomListener.class)
 public class DashBoardPageTest extends TestBase {
 	WelcomePage welcomepage; // defined here so that we can use it throughout the class here.
 	SignInPage signIn;

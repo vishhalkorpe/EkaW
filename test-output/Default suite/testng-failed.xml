@@ -3,14 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.ekalw.qa.testcases.WelcomePageTest">
+      <class name="com.ekalw.qa.base.ScreenshotTest">
         <methods>
-          <include name="tearDown"/>
-          <include name="validateSignInPageTest"/>
           <include name="setUp"/>
-          <include name="validateWelcomePageTitleTest"/>
+          <include name="tearDown"/>
+          <include name="takeScreenshotDemo"/>
         </methods>
-      </class> <!-- com.ekalw.qa.testcases.WelcomePageTest -->
+      </class> <!-- com.ekalw.qa.base.ScreenshotTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
