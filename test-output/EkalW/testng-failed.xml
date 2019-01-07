@@ -7,13 +7,6 @@
   </listeners>
   <test thread-count="5" name="EkalW TestCases(failed)">
     <classes>
-      <class name="com.ekalw.qa.base.ScreenshotTest">
-        <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="takeScreenshotDemo"/>
-        </methods>
-      </class> <!-- com.ekalw.qa.base.ScreenshotTest -->
       <class name="com.ekalw.qa.testcases.MyRetryTest">
         <methods>
           <include name="test1"/>
@@ -21,6 +14,13 @@
           <include name="setUp"/>
         </methods>
       </class> <!-- com.ekalw.qa.testcases.MyRetryTest -->
+      <class name="com.ekalw.qa.base.ScreenshotTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="takeScreenshotDemo"/>
+        </methods>
+      </class> <!-- com.ekalw.qa.base.ScreenshotTest -->
     </classes>
   </test> <!-- EkalW TestCases(failed) -->
 </suite> <!-- Failed suite [EkalW] -->

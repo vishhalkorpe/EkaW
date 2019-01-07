@@ -1,35 +1,19 @@
-package com.ekalw.qa.base;
+package com.ekalw.qa.pages;
 
-import java.util.ArrayList;
-import java.util.Set;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindBy;
-
-import java.util.List;
-import java.util.Map;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
-public class TestChk {
+import com.ekalw.qa.base.TestBase;
+import com.ekalw.qa.base.TestChk;
 
-	// chk cluster details
-	
-	private Map<String, String> data;
-	private WebDriver driver;
-	private int timeout = 15;
+public class ClusterDetailsPage extends TestBase {
 
+	// Page Factory or Object Repository
 	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(23) th:nth-of-type(2) a")
 	@CacheLookup
 	private WebElement _1033;
@@ -302,222 +286,65 @@ public class TestChk {
 	@CacheLookup
 	private WebElement vinval;
 
-	public TestChk() {
+	// Initializing the Page Object
+	public ClusterDetailsPage() {
+
+		PageFactory.initElements(driver, this);
+
 	}
 
-	public TestChk(WebDriver driver) {
-		this();
-		this.driver = driver;
-	}
-
-	public TestChk(WebDriver driver, Map<String, String> data) {
-		this(driver);
-		this.data = data;
-	}
-
-	public TestChk(WebDriver driver, Map<String, String> data, int timeout) {
-		this(driver, data);
-		this.timeout = timeout;
-	}
-
-	/**
-	 * Click on 33 Link.
-	 *
-	 * @return the DashboardPage2 class instance.
-	 */
-	public TestChk click10Link33() {
-		_1033.click();
-		return this;
-	}
-
-	/**
-	 * Click on 33 Link.
-	 *
-	 * @return the DashboardPage2 class instance.
-	 */
-	public TestChk click11Link33() {
-		_1133.click();
-		return this;
-	}
-
-	/**
-	 * Click on 33 Link.
-	 *
-	 * @return the DashboardPage2 class instance.
-	 */
-	public TestChk click12Link33() {
-		_1233.click();
-		return this;
-	}
-
-	/**
-	 * Click on 33 Link.
-	 *
-	 * @return the DashboardPage2 class instance.
-	 */
-	public TestChk click13Link33() {
-		_1333.click();
-		return this;
-	}
-
+	// Actions
 	
-
+	/**
+	 * Verify that current page URL matches the expected URL.
+	 *
+	 */
+	
+	public boolean verifyPageUrl() {
+					
+		String pageUrl = "/clusters";
+		sleep(5000);
+		System.out.println("pageurl verified");
+		
+		return driver.getCurrentUrl().contains(pageUrl);
+			
+	}
+	
 	/**
 	 * Click on 33 Link.
-	 *
-	 * @return the DashboardPage2 class instance.
 	 */
-	public TestChk click1Link33() {
+	public boolean click1Link33() {
+		sleep(5000);
+		System.out.println("click click1Link33");
+		
 		_133.click();
-		return this;
+		
+		return this != null;
 	}
-
-	
-
-	/**
-	 * Click on 33 Link.
-	 *
-	 * @return the DashboardPage2 class instance.
-	 */
-	public TestChk click2Link33() {
-		_233.click();
-		return this;
-	}
-
-	
-
-	/**
-	 * Click on 33 Link.
-	 *
-	 * @return the DashboardPage2 class instance.
-	 */
-	public TestChk click3Link33() {
-		_333.click();
-		return this;
-	}
-
-	
-
-	
-	/**
-	 * Click on 33 Link.
-	 *
-	 * @return the DashboardPage2 class instance.
-	 */
-	public TestChk click4Link33() {
-		_433.click();
-		return this;
-	}
-
-	
-	/**
-	 * Click on 33 Link.
-	 *
-	 * @return the DashboardPage2 class instance.
-	 */
-	public TestChk click5Link33() {
-		_533.click();
-		return this;
-	}
-
-	
-	/**
-	 * Click on 33 Link.
-	 *
-	 * @return the DashboardPage2 class instance.
-	 */
-	public TestChk click6Link33() {
-		_633.click();
-		return this;
-	}
-
-	
-	/**
-	 * Click on 33 Link.
-	 *
-	 * @return the DashboardPage2 class instance.
-	 */
-	public TestChk click7Link33() {
-		_733.click();
-		return this;
-	}
-
-	/**
-	 * Click on 33 Link.
-	 *
-	 * @return the DashboardPage2 class instance.
-	 */
-	public TestChk click8Link33() {
-		_833.click();
-		return this;
-	}
-
-	
-	/**
-	 * Click on 33 Link.
-	 *
-	 * @return the DashboardPage2 class instance.
-	 */
-	public TestChk click9Link33() {
-		_933.click();
-		return this;
-	}
-
 	
 	/**
 	 * Click on Bilgaon Link.
 	 *
 	 * @return the DashboardPage2 class instance.
 	 */
-	public TestChk clickBilgaonLink() {
+	public ClusterDetailsPage clickBilgaonLink() {
+		sleep(5000);
+		System.out.println("click Bilgain");
 		bilgaon.click();
 		return this;
 	}
-
-	/**
-	 * Click on Dab Link.
-	 *
-	 * @return the DashboardPage2 class instance.
-	 */
-	public TestChk clickDabLink() {
-		dab.click();
-		return this;
-	}
-
 	
 	/**
 	 * Click on Molgi Link.
 	 *
 	 * @return the DashboardPage2 class instance.
 	 */
-	public TestChk clickMolgiLink() {
+	public ClusterDetailsPage clickMolgiLink() {
+		sleep(5000);
+		System.out.println("click molgi");
 		molgi.click();
 		return this;
 	}
-
-	/**
-	 * Click on Otur Link.
-	 *
-	 * @return the DashboardPage2 class instance.
-	 */
-	public TestChk clickOturLink() {
-		otur.click();
-		return this;
-	}
-
 	
 
-	/**
-	 * Verify that current page URL matches the expected URL.
-	 *
-	 * @return the DashboardPage2 class instance.
-	 */
-	public TestChk verifyPageUrl() {
-		(new WebDriverWait(driver, timeout)).until(new ExpectedCondition<Boolean>() {
-			public Boolean apply(WebDriver d) {
-				return d.getCurrentUrl().contains(pageUrl);
-			}
-		});
-		return this;
-	}
 }

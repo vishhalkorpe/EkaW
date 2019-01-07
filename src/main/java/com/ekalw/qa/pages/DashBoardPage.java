@@ -1,5 +1,7 @@
 package com.ekalw.qa.pages;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.ekalw.qa.base.TestBase;
@@ -7,8 +9,26 @@ import com.ekalw.qa.base.TestBase;
 public class DashBoardPage extends TestBase {
 
 	// Page Factory or Object Repository
+	@FindBy(xpath=".//button[@type='button']//div//h2[contains(text(),'Clusters')]")
+	WebElement clusterDashboardButton;
 	
+	@FindBy(xpath=".//button//div//h2[contains(text(),'Schools')]")
+	WebElement schoolsDashboardButton;
 	
+	@FindBy(xpath=".//button//div//h2[contains(text(),'Teachers')]")
+	WebElement teachersDashboardButton;
+	
+	@FindBy(xpath=".//button//div//h2[contains(text(),'Students')]")
+	WebElement studentsDashboardButton;
+	
+	@FindBy(xpath="")
+	WebElement clickClusterName;
+	
+	@FindBy(xpath="")
+	WebElement clickClusterHead;
+	
+	@FindBy(xpath="")
+	WebElement clickVillageCount;
 	
 	
 
@@ -17,10 +37,37 @@ public class DashBoardPage extends TestBase {
 		PageFactory.initElements(driver, this);
 	}
 	
-	
-	
+		
 
 	// Actions
+	
+	public ClusterDetailsPage validateClusterDashboardClick(){
+		
+		clusterDashboardButton.click();
+		
+		return new ClusterDetailsPage();
+	}
+	
+	public SchoolSummaryPage validateSchoolsDashboardClick(){
+		
+		schoolsDashboardButton.click();
+		
+		return new SchoolSummaryPage();
+	}
+	
+	public TeacherEnrollmentDetailsPage validateTeachersDashboardClick(){
+		
+		teachersDashboardButton.click();
+		
+		return new TeacherEnrollmentDetailsPage();
+	}
+	
+	public StudentEnrollmentDetailsPage validateStudentDashboardClick(){
+		
+		studentsDashboardButton.click();
+		
+		return new StudentEnrollmentDetailsPage();
+	}
 	
 	//******************************All action methods for below will be created***********************//
 	
@@ -28,6 +75,7 @@ public class DashBoardPage extends TestBase {
 	//OR path=//div[@role='document']//a[@href='/clusters']/li[@role='menuitem']
 
 	//1. Click on Clusters 33there Are 33 Clusters In Maharastra That Are Govern By Ekal.
+	     //https://cecilweb.azurewebsites.net/clusters
 
 	//2. Click on Schools 319there Are 319 Schools Across The Clusters.
 

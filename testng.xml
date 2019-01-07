@@ -9,8 +9,11 @@
 
   <test name="EkalW TestCases" >
     <classes>
-              <class name="com.ekalw.qa.base.ScreenshotTest" />
+            <class name="com.ekalw.qa.testcases.DashBoardPageTest" />
+            <class name="com.ekalw.qa.base.ScreenshotTest" />
               <class name="com.ekalw.qa.testcases.MyRetryTest" />
+               <class name="com.ekalw.qa.testcases.SignInPageTest" />
+                <class name="com.ekalw.qa.testcases.WelcomePageTest" />
      </classes>
   </test>
  
