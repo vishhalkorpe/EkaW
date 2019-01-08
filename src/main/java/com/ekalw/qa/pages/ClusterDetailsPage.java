@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.ekalw.qa.base.TestBase;
-import com.ekalw.qa.base.TestChk;
+import com.ekalw.qa.demo.TestChk;
 
 public class ClusterDetailsPage extends TestBase {
 
