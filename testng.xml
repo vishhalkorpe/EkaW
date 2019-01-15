@@ -7,14 +7,25 @@
 	<listener class-name="com.ekalw.qa.extentReporterListener.ExtentReportNG"></listener>
 </listeners>
 
-  <test name="EkalW TestCases" >
-    <classes>
-            <class name="com.ekalw.qa.testcases.DashBoardPageTest" />
-            <class name="com.ekalw.qa.base.ScreenshotTest" />
-              <class name="com.ekalw.qa.testcases.MyRetryTest" />
-               <class name="com.ekalw.qa.testcases.SignInPageTest" />
-                <class name="com.ekalw.qa.testcases.WelcomePageTest" />
-     </classes>
-  </test>
+<test name="EkalW TestCasesPart1" >
+	<classes>
+		<class name="com.ekalw.qa.testcases.WelcomePageTest"/>   	
+		<class name="com.ekalw.qa.testcases.SignInPageTest"/>
+	</classes>    
+</test>
+
+
+<test name="EkalW TestCasesPart2" >
+	<classes>
+		<class name="com.ekalw.qa.testcases.DashBoardPageTest"/>                    
+	</classes>
+</test>
+  
+<test name="EkalW TestCasesPart3" >
+	<classes>
+		<class name="com.ekalw.qa.testcases.ClusterDetailsPageTest"/>
+	</classes>
+</test>
+  
  
 </suite>

@@ -34,8 +34,8 @@ public class TestNGCustomListener extends TestBase implements ITestListener {
 
 	public void onTestSkipped(ITestResult arg0) {
 		// TODO Auto-generated method stub
-		System.out.println("Skipped Test");
-		failed(arg0.getMethod().getMethodName());
+		//System.out.println("Skipped Test");
+		//failed(arg0.getMethod().getMethodName());
 		
 	}
 
@@ -46,9 +46,11 @@ public class TestNGCustomListener extends TestBase implements ITestListener {
 
 	public void onTestSuccess(ITestResult arg0) {
 		// TODO Auto-generated method stub
+		//System.out.println("Passed Test");
+		//failed(arg0.getMethod().getMethodName());
 		
 	}
-	
-	
+
+		
 
 }

@@ -1,5 +1,8 @@
 package com.ekalw.qa.pages;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -10,281 +13,25 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.ekalw.qa.base.TestBase;
 import com.ekalw.qa.demo.TestChk;
+import com.ekalw.qa.util.GTakeScreenshot;
 
 public class ClusterDetailsPage extends TestBase {
 
 	// Page Factory or Object Repository
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(23) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _1033;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(29) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _1133;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(31) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _1233;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(16) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _130;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(2) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _132;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(1) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _133;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(33) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _1333;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(4) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _134;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(11) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _135;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(24) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _230;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(10) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _232;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(3) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _233;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(6) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _234;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(18) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _235;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(8) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _27;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(17) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _31;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(25) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _330;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(19) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _332;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(5) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _333;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(12) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _334;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(26) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _335;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(30) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _432;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(7) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _433;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(14) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _434;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(9) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _533;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(20) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _534;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(13) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _633;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(27) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _634;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(15) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _733;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(28) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _734;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(21) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _833;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(32) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _834;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(22) th:nth-of-type(2) a")
-	@CacheLookup
-	private WebElement _933;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(23) th:nth-of-type(1) a")
-	@CacheLookup
-	private WebElement aaptale;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(24) th:nth-of-type(1) a")
-	@CacheLookup
-	private WebElement aase;
-
 	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(18) th:nth-of-type(1) a")
 	@CacheLookup
-	private WebElement bilgaon;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(27) th:nth-of-type(1) a")
+	WebElement bilgaon;
+	
+	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(1) th:nth-of-type(2) a")
 	@CacheLookup
-	private WebElement dab;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(22) th:nth-of-type(1) a")
-	@CacheLookup
-	private WebElement dehane;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(11) th:nth-of-type(1) a")
-	@CacheLookup
-	private WebElement gargaon;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(2) th:nth-of-type(1) a")
-	@CacheLookup
-	private WebElement ghatandevi;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(26) th:nth-of-type(1) a")
-	@CacheLookup
-	private WebElement jogmodi;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(20) th:nth-of-type(1) a")
-	@CacheLookup
-	private WebElement karanjali;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(19) th:nth-of-type(1) a")
-	@CacheLookup
-	private WebElement kogda;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(10) th:nth-of-type(1) a")
-	@CacheLookup
-	private WebElement kothali;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(12) th:nth-of-type(1) a")
-	@CacheLookup
-	private WebElement mandvi;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(33) th:nth-of-type(1) a")
-	@CacheLookup
-	private WebElement modhalgaon;
-
+	WebElement _133;
+	
 	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(1) th:nth-of-type(1) a")
 	@CacheLookup
-	private WebElement molgi;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(15) th:nth-of-type(1) a")
-	@CacheLookup
-	private WebElement morhanda;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(3) th:nth-of-type(1) a")
-	@CacheLookup
-	private WebElement naylonthi;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(8) th:nth-of-type(1) a")
-	@CacheLookup
-	private WebElement nimgiri;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(29) th:nth-of-type(1) a")
-	@CacheLookup
-	private WebElement otur;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(13) th:nth-of-type(1) a")
-	@CacheLookup
-	private WebElement ozarkhed;
-
-	private final String pageLoadedText = "Varsha Dnyaneshwar Memane (sanch nimgiri)";
-
-	private final String pageUrl = "/clusters";
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(25) th:nth-of-type(1) a")
-	@CacheLookup
-	private WebElement parali;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(9) th:nth-of-type(1) a")
-	@CacheLookup
-	private WebElement pimplekhunta;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(14) th:nth-of-type(1) a")
-	@CacheLookup
-	private WebElement pratapgad;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(6) th:nth-of-type(1) a")
-	@CacheLookup
-	private WebElement sakur;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(7) th:nth-of-type(1) a")
-	@CacheLookup
-	private WebElement saturli;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(4) th:nth-of-type(1) a")
-	@CacheLookup
-	private WebElement shirasgaon;
-
-	@FindBy(css = "a.headerLink")
-	@CacheLookup
-	private WebElement simsIndia;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(28) th:nth-of-type(1) a")
-	@CacheLookup
-	private WebElement survani;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(16) th:nth-of-type(1) a")
-	@CacheLookup
-	private WebElement suryamal;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(17) th:nth-of-type(1) a")
-	@CacheLookup
-	private WebElement taleghar;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(30) th:nth-of-type(1) a")
-	@CacheLookup
-	private WebElement thanapada;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(5) th:nth-of-type(1) a")
-	@CacheLookup
-	private WebElement tirpad;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(32) th:nth-of-type(1) a")
-	@CacheLookup
-	private WebElement umbarthan;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(21) th:nth-of-type(1) a")
-	@CacheLookup
-	private WebElement vaitarna;
-
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(31) th:nth-of-type(1) a")
-	@CacheLookup
-	private WebElement vinval;
+	WebElement molgi;
+	
+	
+	
 
 	// Initializing the Page Object
 	public ClusterDetailsPage() {
@@ -327,11 +74,11 @@ public class ClusterDetailsPage extends TestBase {
 	 *
 	 * @return the DashboardPage2 class instance.
 	 */
-	public ClusterDetailsPage clickBilgaonLink() {
+	public boolean clickBilgaonLink() {
 		sleep(5000);
-		System.out.println("click Bilgain");
+		System.out.println("click BilgaonLink");
 		bilgaon.click();
-		return this;
+		return this != null;
 	}
 	
 	/**
@@ -339,12 +86,94 @@ public class ClusterDetailsPage extends TestBase {
 	 *
 	 * @return the DashboardPage2 class instance.
 	 */
-	public ClusterDetailsPage clickMolgiLink() {
+	public boolean clickMolgiLink() {
 		sleep(5000);
 		System.out.println("click molgi");
 		molgi.click();
-		return this;
+		return this != null;
 	}
 	
+	// Verify cluster head column >> get any cluster head and navigate to its corresponding Village Count and Cluster Name links.//
+					///***********For specific string i mentioned from table*****************///
+						
+	
+	public boolean verifyClusterHead(){
+		
+		List<WebElement> rows =driver.findElements(By.xpath("//*[@id='root']/div/div[1]/table/tbody/tr")); //get all rows
+		int rowCount=rows.size();
+		System.out.println("Total rows in table is "+rowCount);
+		
+		String beforexpath="//*[@id='root']/div/div[1]/table/tbody/tr[";
+		String afterxpath="]/td[1]";
+		String pecedingpath="//preceding-sibling::th/a";
+		String followingpath="//following-sibling::th/a";
+		
+		for(int i=1; i<=rowCount; i++){
+			
+			String name ="Dhondiram";						//cluster head we using.
+			
+			String actualxpath=beforexpath + i +afterxpath;
+								
+			String precedingpathtotal= actualxpath + pecedingpath;
+						
+			String followingpathtotal= actualxpath + followingpath;
+			
+			WebElement element=driver.findElement(By.xpath(actualxpath));
+			
+			if(element.getText().contains(name)){
+				
+				System.out.println("data of table cluster head: "+element.getText()+" is found "+"at position: "+i);
+				
+				sleep(6000);
+				
+				break;
+			}
+		}
+		return true;
+	}
+	
+	// Verify cluster head RANDOM column >> get any cluster head and navigate to its corresponding Village Count and Cluster Name links.//
+							///***********For random string from row table*****************///
+	
+	public boolean verifyClusterHeadRandom() throws Exception{
+		
+		List<WebElement> rows =driver.findElements(By.xpath("//*[@id='root']/div/div[1]/table/tbody/tr"));
+		int rowCount=rows.size();
+		System.out.println("Total rows in table is "+rowCount);
+				
+		String row4used="//*[@id='root']/div/div[1]/table/tbody/tr[4]";
+		String precedingpath="/td[1]//preceding-sibling::th/a";
+		String followingpath="/td[1]//following-sibling::th/a";
+		String backBtn="//button[contains(text(),'Back')]";
+		
+		String actualclusterHeadused=driver.findElement(By.xpath(row4used)).getText();
+		
+		WebElement ele= driver.findElement(By.xpath(row4used));
+		
+		System.out.println("clusterHeadused is " +actualclusterHeadused);
+		
+				
+		//-->>  now robot have to click hyperlinks 'Cluster Name' and 'Village Count' of 'Cluster Head' used above.  <<--//
+		
+		if(ele.getText().contains(actualclusterHeadused))
+		
+		driver.findElement(By.xpath(row4used+precedingpath)).click();
+		sleep(10000);
+		GTakeScreenshot.takeSnapShot(driver, "D:\\WorkSpace\\Ekal\\EkalW\\Screenshots\\clusterHeadusedpreceding.jpg");
+		
+		driver.findElement(By.xpath(backBtn)).click();
+		driver.findElement(By.xpath(backBtn)).click();
+		sleep(5000);
+		
+		driver.findElement(By.xpath(row4used+followingpath)).click();
+		sleep(10000);
+		GTakeScreenshot.takeSnapShot(driver, "D:\\WorkSpace\\Ekal\\EkalW\\Screenshots\\clusterHeadusedfollowing.jpg");
+		
+		driver.findElement(By.xpath(backBtn)).click();
+		driver.findElement(By.xpath(backBtn)).click();
+		
+		return true;
+		
+	}
 
 }

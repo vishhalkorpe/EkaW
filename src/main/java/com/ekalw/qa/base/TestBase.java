@@ -70,6 +70,8 @@ public class TestBase {
 			} catch (IOException e) {e.printStackTrace();}
 	}
 	
+	
+	
 	   //* Waits for given element to be clickable nvn
 	   public static void clickOn(WebDriver driver,WebElement locator,int timeout){
 		

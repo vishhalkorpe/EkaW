@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.ekalw.qa.base.TestBase;
@@ -14,10 +15,12 @@ import com.ekalw.qa.pages.SignInPage;
 import com.ekalw.qa.pages.StudentEnrollmentDetailsPage;
 import com.ekalw.qa.pages.TeacherEnrollmentDetailsPage;
 import com.ekalw.qa.pages.WelcomePage;
+import com.ekalw.qa.util.GTakeScreenshot;
+import com.ekalw.qa.util.TestNGCustomListener;
 
+@Listeners(TestNGCustomListener.class)   //calling listener to get screenshot.
 public class ClusterDetailsPageTest extends TestBase {
 	
-	//
 	WelcomePage welcomepage; // defined here so that we can use it throughout the class here.
 	SignInPage signIn;
 	DashBoardPage dashBoardPage;
@@ -26,10 +29,10 @@ public class ClusterDetailsPageTest extends TestBase {
 	TeacherEnrollmentDetailsPage teacherEnrollmentDetailsPage;
 	StudentEnrollmentDetailsPage studentEnrollmentDetailsPage;
 	
-	//
+	
 	public ClusterDetailsPageTest() {
-		// Before Initialization step
-		super();
+		super(); // before calling initialization we need to call testbase constructor also as it reads files for initialization.
+
 	}
 	
 	@BeforeMethod
@@ -41,7 +44,7 @@ public class ClusterDetailsPageTest extends TestBase {
 		signIn = welcomepage.validateSignInPage(); // First takes to sign in page
 		dashBoardPage = signIn.signInWithSimsId(prop.getProperty("username"), prop.getProperty("password")); // now sign in page takes to dashboard.
 		clusterDetailsPage = dashBoardPage.validateClusterDashboardClick(); //dashboard takes to clusterdetails page.
-		sleep(5000);
+		
 	}
 
 	//@Test(enabled=false)
@@ -51,53 +54,53 @@ public class ClusterDetailsPageTest extends TestBase {
 		boolean b=clusterDetailsPage.verifyPageUrl();
 		Assert.assertTrue(b);
 		
-
 	}
 	
-	@Test(priority=2)
 	//@Test(enabled=false)
-		public void click1Link33Test(){
+	@Test(priority=2,dependsOnMethods = { "verifyPageUrlTest" })
+	public void click1Link33Test(){
 
 		Assert.assertTrue(clusterDetailsPage.click1Link33());
+		String actual=driver.getCurrentUrl();
+		String url="https://cecilweb.azurewebsites.net/villageList#";
+		Assert.assertEquals(actual, url);
 		
 	}
 	
-	@Test(priority=3)
-	public void togetvalue(){
+	@Test(priority=3,dependsOnMethods = { "verifyPageUrlTest" })
+	public void clickBilgaonLinkTest() throws Exception{
 		
-		clusterDetailsPage.click1Link33();
-		sleep(4000);
-
-		String count=driver.findElement(By.xpath("//div/h2[starts-with(text(),'School')]")).getAttribute("innerhtml");
-				
-		System.out.println("COunt is : "+count);  
+		Assert.assertTrue(clusterDetailsPage.clickBilgaonLink());
+		String actual=driver.getCurrentUrl();
+		String url="https://cecilweb.azurewebsites.net/villages#";
+		Assert.assertEquals(actual, url);
+		sleep(3000);
+		GTakeScreenshot.takeSnapShot(driver,"D:\\WorkSpace\\Ekal\\EkalW\\Screenshots\\bilgaonscreen.jpg");	
+	}
+	
+	@Test(priority=4,dependsOnMethods = { "verifyPageUrlTest" })
+	public void clickMolgiLinkTest() throws Exception{
 		
-		sleep(4000);
+		Assert.assertTrue(clusterDetailsPage.clickMolgiLink());
+		sleep(3000);
+		GTakeScreenshot.takeSnapShot(driver,"D:\\WorkSpace\\Ekal\\EkalW\\Screenshots\\clickMolgi.jpg");	
+	}
+	
+	@Test(priority=5,dependsOnMethods="verifyPageUrlTest")
+	public void verifyClusterHeadTest(){
 		
-		String texcount=driver.findElement(By.xpath("//div/h2[starts-with(text(),'School')]")).getText();
-		
-		System.out.println("texCOunt is : "+texcount); 
-		
-		sleep(4000);
-		
-		String attrcount=driver.findElement(By.xpath("//div/h2[starts-with(text(),'School')]")).getAttribute("value");
-		
-		System.out.println("texCOunt is : "+attrcount);
-		
-		sleep(4000);
-		
-		String tagnamecount=driver.findElement(By.xpath("//div/h2[starts-with(text(),'School')]")).getTagName();
-		
-		System.out.println("texCOunt is : "+tagnamecount);
-		
-		sleep(4000);
-		
-		String tacount=driver.findElement(By.xpath("//div/h2[starts-with(text(),'School')]")).getCssValue("v");
-		
-		System.out.println("texCOunt is : "+tagnamecount);
+		boolean result=clusterDetailsPage.verifyClusterHead();
+		Assert.assertTrue(result);
 		
 	}
 	
+	@Test(priority=6,dependsOnMethods="verifyPageUrlTest")
+	public void verifyClusterHeadRandomTest() throws Exception{
+		
+		boolean flag=clusterDetailsPage.verifyClusterHeadRandom();
+		Assert.assertEquals(flag, true);
+		
+	}
 	
 	
 	@AfterMethod

@@ -44,7 +44,8 @@ public class DemoWebTable extends TestBase {
 		sleep(5000);
 	}
 
-	@Test
+			///***********For specific string i mentioned from table*****************///
+	@Test(enabled=false)
 	public void test1(){
 		
 		List<WebElement> rows =driver.findElements(By.xpath("//*[@id='root']/div/div[1]/table/tbody/tr"));
@@ -56,6 +57,7 @@ public class DemoWebTable extends TestBase {
 		String pecedingpath="//preceding-sibling::th/a";
 		String followingpath="//following-sibling::th/a";
 		
+			
 		for(int i=1; i<=rowCount; i++){
 			
 			String name ="Dhondiram";
@@ -101,6 +103,43 @@ public class DemoWebTable extends TestBase {
 				break;
 			}
 		}
+		
+	}
+	
+	
+				///***********For random string from row table*****************///
+	@Test
+	public void test2(){
+		
+		List<WebElement> rows =driver.findElements(By.xpath("//*[@id='root']/div/div[1]/table/tbody/tr"));
+		int rowCount=rows.size();
+		System.out.println("Total rows in table is "+rowCount);
+				
+		String row4used="//*[@id='root']/div/div[1]/table/tbody/tr[4]";
+		String precedingpath="/td[1]//preceding-sibling::th/a";
+		String followingpath="/td[1]//following-sibling::th/a";
+		String backBtn="//button[contains(text(),'Back')]";
+		
+		String actualclusterHeadused=driver.findElement(By.xpath(row4used)).getText();
+		
+		WebElement ele= driver.findElement(By.xpath(row4used));
+		
+		System.out.println("clusterHeadused is " +actualclusterHeadused);
+		
+				
+		//-->>  now robot have to click hyperlinks 'Cluster Name' and 'Village Count' of 'Cluster Head' used above.  <<--//
+		
+		if(ele.getText().contains(actualclusterHeadused))
+		
+		driver.findElement(By.xpath(row4used+precedingpath)).click();
+		sleep(10000);
+		driver.findElement(By.xpath(backBtn)).click();
+		driver.findElement(By.xpath(backBtn)).click();
+		sleep(5000);
+		driver.findElement(By.xpath(row4used+followingpath)).click();
+		sleep(10000);
+		driver.findElement(By.xpath(backBtn)).click();
+		driver.findElement(By.xpath(backBtn)).click();
 		
 	}
 	
