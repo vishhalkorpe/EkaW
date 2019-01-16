@@ -18,18 +18,32 @@ import com.ekalw.qa.util.GTakeScreenshot;
 public class ClusterDetailsPage extends TestBase {
 
 	// Page Factory or Object Repository
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(18) th:nth-of-type(1) a")
+	//@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(18) th:nth-of-type(1) a")
+	//@CacheLookup
+	//WebElement bilgaon;
+	
+	@FindBy(linkText="Bilgaon")
 	@CacheLookup
 	WebElement bilgaon;
 	
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(1) th:nth-of-type(2) a")
-	@CacheLookup
-	WebElement _133;
 	
-	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(1) th:nth-of-type(1) a")
+//	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(1) th:nth-of-type(2) a")
+//	@CacheLookup
+//	WebElement _133;
+	
+	//tbody//tr[1]//th//a[text()='Molgi']//following::a[1]
+	
+//	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(1) th:nth-of-type(1) a")
+//	@CacheLookup
+//	WebElement molgi;
+	
+	@FindBy(linkText="Molgi")
 	@CacheLookup
 	WebElement molgi;
 	
+	@FindBy(xpath="//tbody//tr[1]//th//a[text()='Molgi']//following::a[1]")
+	@CacheLookup
+	WebElement _133;
 	
 	
 

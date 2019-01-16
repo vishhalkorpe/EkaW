@@ -26,6 +26,12 @@
 		<class name="com.ekalw.qa.testcases.ClusterDetailsPageTest"/>
 	</classes>
 </test>
+
+<test name="EkalW TestCasesPart4" >
+	<classes>
+		<class name="com.ekalw.qa.testcases.SchoolSummaryPageTest"/>
+	</classes>
+</test>
   
  
 </suite>

@@ -13,7 +13,6 @@ import com.ekalw.qa.pages.DashBoardPage;
 import com.ekalw.qa.pages.SignInPage;
 import com.ekalw.qa.pages.WelcomePage;
 import com.ekalw.qa.util.TestNGCustomListener;
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Single;
 
 @Listeners(TestNGCustomListener.class)   //calling listener to get screenshot.
 public class SignInPageTest extends TestBase {

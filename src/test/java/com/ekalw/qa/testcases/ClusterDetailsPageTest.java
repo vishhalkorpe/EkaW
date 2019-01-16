@@ -83,7 +83,7 @@ public class ClusterDetailsPageTest extends TestBase {
 		
 		Assert.assertTrue(clusterDetailsPage.clickMolgiLink());
 		sleep(3000);
-		GTakeScreenshot.takeSnapShot(driver,"D:\\WorkSpace\\Ekal\\EkalW\\Screenshots\\clickMolgi.jpg");	
+		GTakeScreenshot.takeSnapShot(driver,"D:\\WorkSpace\\Ekal\\EkalW\\Screenshots\\molgiscreen.jpg");	
 	}
 	
 	@Test(priority=5,dependsOnMethods="verifyPageUrlTest")

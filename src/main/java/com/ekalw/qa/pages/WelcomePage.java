@@ -8,6 +8,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.ekalw.qa.base.TestBase;
+import com.ekalw.qa.util.GTakeScreenshot;
+import com.ekalw.qa.util.JavaScriptExecutorConcept;
 
 public class WelcomePage extends TestBase {
 
@@ -31,8 +33,11 @@ public class WelcomePage extends TestBase {
 	/*
      * Verify that the page title.
      */
-	public String validateWelcomePageTitle(){
+	public String validateWelcomePageTitle() throws Exception{
 		
+		JavaScriptExecutorConcept.flash(loginWithSimsId, driver);
+		JavaScriptExecutorConcept.drawBorder(loginWithSimsId, driver);
+		GTakeScreenshot.takeSnapShot(driver,"D:\\WorkSpace\\Ekal\\EkalW\\Screenshots\\loginWithSimsId.jpg");
 		return driver.getTitle();
 		
 	} //Home

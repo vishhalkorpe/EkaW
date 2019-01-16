@@ -46,6 +46,7 @@ public class WelcomePageTest extends TestBase {
 	}
 	
 	@Test(priority=2)
+	//@Test(enabled = false)
 	public void validatePageLoadedTest(){
 		
 		boolean b=welcomepage.validatePageLoaded();
@@ -54,7 +55,7 @@ public class WelcomePageTest extends TestBase {
 		Assert.assertTrue(b);
 	}
 	
-		//@Test(enabled = false)
+	//@Test(enabled = false)
 	@Test(priority=3)
 	public void validateSignInPageTest(){
 		System.out.println("validateSignInPageTest");
