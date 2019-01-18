@@ -7,12 +7,13 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.ekalw.qa.base.TestBase;
+import com.ekalw.qa.base.TestBase22;
 import com.ekalw.qa.pages.WelcomePage;
 import com.ekalw.qa.util.MyScreenRecorder;
 import com.ekalw.qa.util.TestNGCustomListener;
 
 @Listeners(TestNGCustomListener.class)
-public class ScreenRecTest extends TestBase {
+public class ScreenRecTest extends TestBase{
 
 	WelcomePage welcomepage;
 

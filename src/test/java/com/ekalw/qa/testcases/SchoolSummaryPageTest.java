@@ -17,7 +17,7 @@ import com.ekalw.qa.pages.WelcomePage;
 import com.ekalw.qa.util.TestNGCustomListener;
 
 @Listeners(TestNGCustomListener.class)   //calling listener to get screenshot.
-public class SchoolSummaryPageTest extends TestBase {
+public class SchoolSummaryPageTest extends TestBase{
 		
 		WelcomePage welcomepage; // defined here so that we can use it throughout the class here.
 		SignInPage signIn;
@@ -42,7 +42,7 @@ public class SchoolSummaryPageTest extends TestBase {
 			signIn = welcomepage.validateSignInPage(); // First takes to sign in page
 			dashBoardPage = signIn.signInWithSimsId(prop.getProperty("username"), prop.getProperty("password")); // now sign in page takes to dashboard.
 			//clusterDetailsPage = dashBoardPage.validateClusterDashboardClick(); //dashboard takes to clusterdetails page.
-			schoolSummaryPage = dashBoardPage.validateSchoolsDashboardClick();
+			schoolSummaryPage = dashBoardPage.verifySchoolsDashboardClick();
 			
 		}
 		
@@ -63,7 +63,7 @@ public class SchoolSummaryPageTest extends TestBase {
 		@Test(priority=2)
 		public void verifyPageLoadedTest(){
 
-			schoolSummaryPage.verifyPageLoaded();
+			Assert.assertTrue(schoolSummaryPage.verifyPageLoaded());
 			
 			
 		}
@@ -71,14 +71,14 @@ public class SchoolSummaryPageTest extends TestBase {
 		@Test(priority=3)
 		public void clickATestSchoolSomewhereLinkTest(){
 
-			schoolSummaryPage.clickATestSchoolSomewhereLink();
+			Assert.assertTrue(schoolSummaryPage.clickATestSchoolSomewhereLink());
 			
 		}
 		
 		@Test(priority=4)
 		public void clickDuageSchoolLinkTest(){
 
-			schoolSummaryPage.clickDuageSchoolLink();
+			Assert.assertTrue(schoolSummaryPage.clickDuageSchoolLink());
 			
 			
 		}
@@ -86,7 +86,7 @@ public class SchoolSummaryPageTest extends TestBase {
 		@Test(priority=5)
 		public void clickZyucvSchoolLinkTest(){
 
-			schoolSummaryPage.clickZyucvSchoolLink();
+			Assert.assertTrue(schoolSummaryPage.clickZyucvSchoolLink());
 			
 			
 		}

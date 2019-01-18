@@ -8,9 +8,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.ekalw.qa.base.TestBase;
+import com.ekalw.qa.base.TestBase22;
 
-public class SignInPage extends TestBase{
+public class SignInPage extends TestBase22{
 	
 	//Page Factory or Object Repository
 	@FindBy(xpath=".//div[@class='cookie-notice-confirm']//button[@id='cookie-notice-confirm']")
@@ -128,17 +128,17 @@ public class SignInPage extends TestBase{
 						// Report ur new tab is found with appropriate title
 								
 						driver.switchTo().window(eachHandle);  //not closing but switching to new tab
-						Thread.sleep(3000);
+						sleep(3000);
 						
 					}
 				}
 
 				if (myNewTabFound) {
 					driver.findElement(By.xpath("//input[@name='Username']")).sendKeys("ceciltest@example.com");
-					Thread.sleep(3000);
+					sleep(3000);
 				}
 				
-				Thread.sleep(5000);
+				sleep(5000);
 				
 				driver.switchTo().frame(0);
 				driver.findElement(By.xpath(".//span[@id='recaptcha-anchor']//div[@class='recaptcha-checkbox-checkmark']")).click();

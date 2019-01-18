@@ -15,7 +15,7 @@ import com.ekalw.qa.pages.WelcomePage;
 import com.ekalw.qa.util.TestNGCustomListener;
 
 @Listeners(TestNGCustomListener.class)   //calling listener to get screenshot.
-public class SignInPageTest extends TestBase {
+public class SignInPageTest extends TestBase{
 
 	WelcomePage welcomepage; // defined here so that we can use it throughout the class here.
 	SignInPage signIn;
@@ -64,21 +64,21 @@ public class SignInPageTest extends TestBase {
 
 		dashBoardPage = signIn.signInWithSimsId(prop.getProperty("username"), prop.getProperty("password"));
 
-		System.out.println("dome");
+		System.out.println("doneS");
 
 	}
-
-	@Test(priority=5)
+	@Test(enabled=false)
+	//@Test(priority=5)
 	public void signInWithGoogleIdTest() throws InterruptedException {
 
 		dashBoardPage = signIn.signInWithGoogleId(prop.getProperty("email_id"), prop.getProperty("email_password"));
 
-		System.out.println("dome");
+		System.out.println("doneG");
 
 	}
 	
-	
-	@Test(priority=6)
+	@Test(enabled=false)
+	//@Test(priority=6)
 	public void forgetPasswordForSignInWithSimsIdTest() throws InterruptedException{
 		
 		boolean errorFlag=signIn.forgetPasswordForSignInWithSimsId();

@@ -10,7 +10,7 @@ import com.ekalw.qa.base.TestBase;
 import com.ekalw.qa.util.TestNGCustomListener;
 
 @Listeners(TestNGCustomListener.class)
-public class MyRetryTest extends TestBase {
+public class MyRetryTest extends TestBase{
 	
 	
 	public MyRetryTest(){

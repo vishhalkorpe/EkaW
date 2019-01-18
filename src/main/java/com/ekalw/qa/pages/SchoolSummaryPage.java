@@ -8,9 +8,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.ekalw.qa.base.TestBase;
+import com.ekalw.qa.base.TestBase22;
 
-public class SchoolSummaryPage extends TestBase {
+public class SchoolSummaryPage extends TestBase22 {
 	
 	// Page Factory or Object Repository
 	public final String pageUrl = "/schoolReportDetails";
@@ -41,9 +41,9 @@ public class SchoolSummaryPage extends TestBase {
 	     *
 	     * @return the SSSS class instance.
 	     */
-	    public SchoolSummaryPage clickATestSchoolSomewhereLink() {
+	    public boolean clickATestSchoolSomewhereLink() {
 	        aTestSchoolSomewhere.click();
-	        return this;
+	        return this != null;
 	    }
 
 	    
@@ -52,9 +52,9 @@ public class SchoolSummaryPage extends TestBase {
 	     *
 	     * @return the SSSS class instance.
 	     */
-	    public SchoolSummaryPage clickDuageSchoolLink() {
+	    public boolean clickDuageSchoolLink() {
 	        duageSchool.click();
-	        return this;
+	        return this != null;
 	    }
 
 	    		    
@@ -63,9 +63,9 @@ public class SchoolSummaryPage extends TestBase {
 	     *
 	     * @return the SSSS class instance.
 	     */
-	    public SchoolSummaryPage clickZyucvSchoolLink() {
+	    public boolean clickZyucvSchoolLink() {
 	        zyucvSchool.click();
-	        return this;
+	        return this != null;
 	    }
 
 	    /**
@@ -73,13 +73,13 @@ public class SchoolSummaryPage extends TestBase {
 	     *
 	     * @return the SSSS class instance.
 	     */
-	    public SchoolSummaryPage verifyPageLoaded() {
+	    public boolean verifyPageLoaded() {
 	        (new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
 	            public Boolean apply(WebDriver d) {
 	                return d.getPageSource().contains(pageLoadedText);
 	            }
 	        });
-	        return this;
+	        return this != null;
 	    }
 
 	    /**

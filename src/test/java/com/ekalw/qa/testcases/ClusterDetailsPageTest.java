@@ -16,10 +16,11 @@ import com.ekalw.qa.pages.StudentEnrollmentDetailsPage;
 import com.ekalw.qa.pages.TeacherEnrollmentDetailsPage;
 import com.ekalw.qa.pages.WelcomePage;
 import com.ekalw.qa.util.GTakeScreenshot;
+import com.ekalw.qa.util.JavaScriptExecutorConcept;
 import com.ekalw.qa.util.TestNGCustomListener;
 
 @Listeners(TestNGCustomListener.class)   //calling listener to get screenshot.
-public class ClusterDetailsPageTest extends TestBase {
+public class ClusterDetailsPageTest extends TestBase{
 	
 	WelcomePage welcomepage; // defined here so that we can use it throughout the class here.
 	SignInPage signIn;
@@ -43,13 +44,13 @@ public class ClusterDetailsPageTest extends TestBase {
 		
 		signIn = welcomepage.validateSignInPage(); // First takes to sign in page
 		dashBoardPage = signIn.signInWithSimsId(prop.getProperty("username"), prop.getProperty("password")); // now sign in page takes to dashboard.
-		clusterDetailsPage = dashBoardPage.validateClusterDashboardClick(); //dashboard takes to clusterdetails page.
+		clusterDetailsPage = dashBoardPage.verifyClusterDashboardClick(); //dashboard takes to clusterdetails page.
 		
 	}
 
 	//@Test(enabled=false)
 	@Test(priority=1)
-	public void verifyPageUrlTest(){
+	public void verifyPageUrlTest() throws Exception{
 
 		boolean b=clusterDetailsPage.verifyPageUrl();
 		Assert.assertTrue(b);
@@ -58,7 +59,7 @@ public class ClusterDetailsPageTest extends TestBase {
 	
 	//@Test(enabled=false)
 	@Test(priority=2,dependsOnMethods = { "verifyPageUrlTest" })
-	public void click1Link33Test(){
+	public void click1Link33Test() throws Exception{
 
 		Assert.assertTrue(clusterDetailsPage.click1Link33());
 		String actual=driver.getCurrentUrl();
@@ -67,6 +68,7 @@ public class ClusterDetailsPageTest extends TestBase {
 		
 	}
 	
+	//@Test(enabled=false)
 	@Test(priority=3,dependsOnMethods = { "verifyPageUrlTest" })
 	public void clickBilgaonLinkTest() throws Exception{
 		
@@ -74,19 +76,19 @@ public class ClusterDetailsPageTest extends TestBase {
 		String actual=driver.getCurrentUrl();
 		String url="https://cecilweb.azurewebsites.net/villages#";
 		Assert.assertEquals(actual, url);
-		sleep(3000);
-		GTakeScreenshot.takeSnapShot(driver,"D:\\WorkSpace\\Ekal\\EkalW\\Screenshots\\bilgaonscreen.jpg");	
+			
 	}
 	
+	//@Test(enabled=false)
 	@Test(priority=4,dependsOnMethods = { "verifyPageUrlTest" })
 	public void clickMolgiLinkTest() throws Exception{
 		
 		Assert.assertTrue(clusterDetailsPage.clickMolgiLink());
-		sleep(3000);
-		GTakeScreenshot.takeSnapShot(driver,"D:\\WorkSpace\\Ekal\\EkalW\\Screenshots\\molgiscreen.jpg");	
 	}
 	
-	@Test(priority=5,dependsOnMethods="verifyPageUrlTest")
+	
+	//@Test(enabled=false)
+	@Test(priority=6,dependsOnMethods="verifyPageUrlTest")
 	public void verifyClusterHeadTest(){
 		
 		boolean result=clusterDetailsPage.verifyClusterHead();
@@ -94,7 +96,8 @@ public class ClusterDetailsPageTest extends TestBase {
 		
 	}
 	
-	@Test(priority=6,dependsOnMethods="verifyPageUrlTest")
+	//@Test(enabled=false)
+	@Test(priority=7,dependsOnMethods="verifyPageUrlTest")
 	public void verifyClusterHeadRandomTest() throws Exception{
 		
 		boolean flag=clusterDetailsPage.verifyClusterHeadRandom();

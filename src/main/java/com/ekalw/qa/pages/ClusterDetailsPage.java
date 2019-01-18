@@ -1,6 +1,7 @@
 package com.ekalw.qa.pages;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,31 +12,22 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.ekalw.qa.base.TestBase;
+import com.ekalw.qa.base.TestBase22;
 import com.ekalw.qa.demo.TestChk;
 import com.ekalw.qa.util.GTakeScreenshot;
+import com.ekalw.qa.util.JavaScriptExecutorConcept;
+import com.ekalw.qa.util.TestUtil;
 
-public class ClusterDetailsPage extends TestBase {
+public class ClusterDetailsPage extends TestBase22 {
 
 	// Page Factory or Object Repository
-	//@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(18) th:nth-of-type(1) a")
-	//@CacheLookup
-	//WebElement bilgaon;
-	
 	@FindBy(linkText="Bilgaon")
 	@CacheLookup
 	WebElement bilgaon;
 	
-	
-//	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(1) th:nth-of-type(2) a")
-//	@CacheLookup
-//	WebElement _133;
-	
-	//tbody//tr[1]//th//a[text()='Molgi']//following::a[1]
-	
-//	@FindBy(css = "#root div.page-content div:nth-of-type(1) table.MuiTable-root-190 tbody.MuiTableBody-root-205 tr:nth-of-type(1) th:nth-of-type(1) a")
-//	@CacheLookup
-//	WebElement molgi;
+	@FindBy(linkText="Kogda")
+	@CacheLookup
+	WebElement kogda;
 	
 	@FindBy(linkText="Molgi")
 	@CacheLookup
@@ -45,7 +37,17 @@ public class ClusterDetailsPage extends TestBase {
 	@CacheLookup
 	WebElement _133;
 	
+	@FindBy(xpath="//th[contains(text(),'Cluster Name')]")
+	@CacheLookup
+	WebElement clusterNameText;
 	
+	@FindBy(xpath="//div[@class='page-content']//p[contains(text(),'Active school:')]")
+	@CacheLookup
+	WebElement villagesText;	
+	
+	@FindBy(xpath="//th[text()=' Student Count']")
+	@CacheLookup
+	WebElement clusterDetailStudentCountText;
 
 	// Initializing the Page Object
 	public ClusterDetailsPage() {
@@ -58,27 +60,31 @@ public class ClusterDetailsPage extends TestBase {
 	
 	/**
 	 * Verify that current page URL matches the expected URL.
+	 * @throws Exception 
 	 *
 	 */
 	
-	public boolean verifyPageUrl() {
+	public boolean verifyPageUrl() throws Exception {
 					
 		String pageUrl = "/clusters";
-		sleep(5000);
-		System.out.println("pageurl verified");
-		
+		waitForElementVisible(driver,clusterNameText);
+		System.out.println("Testing verifyPageUrlTest");
+		GTakeScreenshot.takeSnapShot(driver, "D:\\WorkSpace\\Ekal\\EkalW\\ScreenShotManual\\verifyPageUrlM.jpg");
 		return driver.getCurrentUrl().contains(pageUrl);
 			
 	}
 	
-	/**
+	/*
 	 * Click on 33 Link.
 	 */
-	public boolean click1Link33() {
-		sleep(5000);
-		System.out.println("click click1Link33");
-		
+	public boolean click1Link33() throws Exception {
+		//sleep(3000);
+		System.out.println("Testing click click1Link33");
+		clickOn(driver, _133,TestUtil.Click_VISIBLE_WAIT);
 		_133.click();
+		waitForElementVisible(driver,villagesText);
+		sleep(3000);
+		GTakeScreenshot.takeSnapShot(driver, "D:\\WorkSpace\\Ekal\\EkalW\\ScreenShotManual\\click1Link33M.jpg");
 		
 		return this != null;
 	}
@@ -87,11 +93,18 @@ public class ClusterDetailsPage extends TestBase {
 	 * Click on Bilgaon Link.
 	 *
 	 * @return the DashboardPage2 class instance.
+	 * @throws Exception 
 	 */
-	public boolean clickBilgaonLink() {
+	public boolean clickBilgaonLink() throws Exception {
+		System.out.println("Testing click BilgaonLink");
+		waitForElementVisible(driver, bilgaon);
+		JavaScriptExecutorConcept.scrollIntoView(bilgaon, driver);
 		sleep(5000);
-		System.out.println("click BilgaonLink");
+		JavaScriptExecutorConcept.flash(bilgaon, driver);
 		bilgaon.click();
+		waitForElementVisible(driver,clusterDetailStudentCountText);
+		sleep(3000);
+		GTakeScreenshot.takeSnapShot(driver, "D:\\WorkSpace\\Ekal\\EkalW\\ScreenShotManual\\clickBilgaonLinkM.jpg");
 		return this != null;
 	}
 	
@@ -99,14 +112,20 @@ public class ClusterDetailsPage extends TestBase {
 	 * Click on Molgi Link.
 	 *
 	 * @return the DashboardPage2 class instance.
+	 * @throws Exception 
 	 */
-	public boolean clickMolgiLink() {
+	public boolean clickMolgiLink() throws Exception {
 		sleep(5000);
-		System.out.println("click molgi");
+		System.out.println("Testing click molgi");
+		waitForElementVisible(driver, molgi);
 		molgi.click();
+		waitForElementVisible(driver,clusterDetailStudentCountText);
+		sleep(3000);
+		GTakeScreenshot.takeSnapShot(driver, "D:\\WorkSpace\\Ekal\\EkalW\\ScreenShotManual\\clickMolgiLinkM.jpg");
 		return this != null;
 	}
 	
+		
 	// Verify cluster head column >> get any cluster head and navigate to its corresponding Village Count and Cluster Name links.//
 					///***********For specific string i mentioned from table*****************///
 						
@@ -173,7 +192,7 @@ public class ClusterDetailsPage extends TestBase {
 		
 		driver.findElement(By.xpath(row4used+precedingpath)).click();
 		sleep(10000);
-		GTakeScreenshot.takeSnapShot(driver, "D:\\WorkSpace\\Ekal\\EkalW\\Screenshots\\clusterHeadusedpreceding.jpg");
+		GTakeScreenshot.takeSnapShot(driver, "D:\\WorkSpace\\Ekal\\EkalW\\ScreenShotManual\\clusterHeadusedpreceding.jpg");
 		
 		driver.findElement(By.xpath(backBtn)).click();
 		driver.findElement(By.xpath(backBtn)).click();
@@ -181,7 +200,7 @@ public class ClusterDetailsPage extends TestBase {
 		
 		driver.findElement(By.xpath(row4used+followingpath)).click();
 		sleep(10000);
-		GTakeScreenshot.takeSnapShot(driver, "D:\\WorkSpace\\Ekal\\EkalW\\Screenshots\\clusterHeadusedfollowing.jpg");
+		GTakeScreenshot.takeSnapShot(driver, "D:\\WorkSpace\\Ekal\\EkalW\\ScreenShotManual\\clusterHeadusedfollowing.jpg");
 		
 		driver.findElement(By.xpath(backBtn)).click();
 		driver.findElement(By.xpath(backBtn)).click();

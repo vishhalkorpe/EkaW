@@ -14,7 +14,6 @@
 	</classes>    
 </test>
 
-
 <test name="EkalW TestCasesPart2" >
 	<classes>
 		<class name="com.ekalw.qa.testcases.DashBoardPageTest"/>                    
@@ -32,6 +31,5 @@
 		<class name="com.ekalw.qa.testcases.SchoolSummaryPageTest"/>
 	</classes>
 </test>
-  
- 
+
 </suite>

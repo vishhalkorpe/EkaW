@@ -18,7 +18,7 @@ import com.ekalw.qa.util.GTakeScreenshot;
 import com.ekalw.qa.util.TestNGCustomListener;
 
 @Listeners(TestNGCustomListener.class)
-public class DashBoardPageTest extends TestBase {
+public class DashBoardPageTest extends TestBase{
 	WelcomePage welcomepage; // defined here so that we can use it throughout the class here.
 	SignInPage signIn;
 	DashBoardPage dashBoardPage;
@@ -56,7 +56,7 @@ public class DashBoardPageTest extends TestBase {
 	public void validateClusterDashboardClickTest() throws Exception {
 
 		System.out.println("Test clusterDetailsPage");
-		clusterDetailsPage = dashBoardPage.validateClusterDashboardClick();
+		clusterDetailsPage = dashBoardPage.verifyClusterDashboardClick();
 		System.out.println("Landing to clusterDetailsPage");
 		sleep(3000);
 		GTakeScreenshot.takeSnapShot(driver,"D:\\WorkSpace\\Ekal\\EkalW\\Screenshots\\clusterDetailsPageShot.jpg");
@@ -68,7 +68,7 @@ public class DashBoardPageTest extends TestBase {
 	public void validateSchoolsDashboardClickTest() throws Exception {
 
 		System.out.println("Test schoolSummaryPage");
-		schoolSummaryPage = dashBoardPage.validateSchoolsDashboardClick();
+		schoolSummaryPage = dashBoardPage.verifySchoolsDashboardClick();
 		System.out.println("Landing to schoolSummaryPage");
 		sleep(3000);
 		GTakeScreenshot.takeSnapShot(driver,"D:\\WorkSpace\\Ekal\\EkalW\\Screenshots\\schoolSummaryPageShot.jpg");
@@ -79,7 +79,7 @@ public class DashBoardPageTest extends TestBase {
 	public void validateTeachersDashboardClickTest() throws Exception {
 
 		System.out.println("Test teacherEnrollmentDetailsPage");
-		teacherEnrollmentDetailsPage = dashBoardPage.validateTeachersDashboardClick();
+		teacherEnrollmentDetailsPage = dashBoardPage.verifyTeachersDashboardClick();
 		System.out.println("Landing to teacherEnrollmentDetailsPage");
 		sleep(3000);
 		GTakeScreenshot.takeSnapShot(driver,"D:\\WorkSpace\\Ekal\\EkalW\\Screenshots\\teacherEnrollmentDetailsPageShot.jpg");
@@ -91,7 +91,7 @@ public class DashBoardPageTest extends TestBase {
 	public void validateStudentDashboardClickTest() throws Exception {
 
 		System.out.println("Test studentEnrollmentDetailsPage");
-		studentEnrollmentDetailsPage = dashBoardPage.validateStudentDashboardClick();
+		studentEnrollmentDetailsPage = dashBoardPage.verifyStudentDashboardClick();
 		System.out.println("Landing to studentEnrollmentDetailsPage");
 		sleep(3000);
 		GTakeScreenshot.takeSnapShot(driver,"D:\\WorkSpace\\Ekal\\EkalW\\Screenshots\\studentEnrollmentDetailsPageShot.jpg");

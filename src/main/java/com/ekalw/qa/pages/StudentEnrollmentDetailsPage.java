@@ -1,7 +1,7 @@
 package com.ekalw.qa.pages;
 
-import com.ekalw.qa.base.TestBase;
+import com.ekalw.qa.base.TestBase22;
 
-public class StudentEnrollmentDetailsPage extends TestBase {
+public class StudentEnrollmentDetailsPage extends TestBase22 {
 
 }

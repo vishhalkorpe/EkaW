@@ -17,7 +17,7 @@ import com.ekalw.qa.util.TestNGCustomListener;
 
 @Listeners(TestNGCustomListener.class)   //calling listener to get screenshot.
 
-public class WelcomePageTest extends TestBase {
+public class WelcomePageTest extends TestBase{
 
 	WelcomePage welcomepage; // defined here so that we can use it throughout the class here.
 	SignInPage signIn;

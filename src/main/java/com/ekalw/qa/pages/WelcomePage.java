@@ -7,11 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.ekalw.qa.base.TestBase;
+import com.ekalw.qa.base.TestBase22;
 import com.ekalw.qa.util.GTakeScreenshot;
 import com.ekalw.qa.util.JavaScriptExecutorConcept;
 
-public class WelcomePage extends TestBase {
+public class WelcomePage extends TestBase22 {
 
 	// Page Factory or Object Repository
 

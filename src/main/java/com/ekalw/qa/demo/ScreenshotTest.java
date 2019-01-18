@@ -8,11 +8,12 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.ekalw.qa.base.TestBase;
+import com.ekalw.qa.base.TestBase22;
 import com.ekalw.qa.pages.WelcomePage;
 import com.ekalw.qa.util.TestNGCustomListener;
 
 @Listeners(TestNGCustomListener.class)
-public class ScreenshotTest extends TestBase {
+public class ScreenshotTest extends TestBase{
 	
 	public ScreenshotTest(){
 		

@@ -4,9 +4,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.ekalw.qa.base.TestBase;
+import com.ekalw.qa.base.TestBase22;
 
-public class DashBoardPage extends TestBase {
+public class DashBoardPage extends TestBase22 {
 
 	// Page Factory or Object Repository
 	@FindBy(xpath=".//button[@type='button']//div//h2[contains(text(),'Clusters')]")
@@ -41,28 +41,28 @@ public class DashBoardPage extends TestBase {
 
 	// Actions
 	
-	public ClusterDetailsPage validateClusterDashboardClick(){
+	public ClusterDetailsPage verifyClusterDashboardClick(){
 		
 		clusterDashboardButton.click();
 		
 		return new ClusterDetailsPage();
 	}
 	
-	public SchoolSummaryPage validateSchoolsDashboardClick(){
+	public SchoolSummaryPage verifySchoolsDashboardClick(){
 		
 		schoolsDashboardButton.click();
 		
 		return new SchoolSummaryPage();
 	}
 	
-	public TeacherEnrollmentDetailsPage validateTeachersDashboardClick(){
+	public TeacherEnrollmentDetailsPage verifyTeachersDashboardClick(){
 		
 		teachersDashboardButton.click();
 		
 		return new TeacherEnrollmentDetailsPage();
 	}
 	
-	public StudentEnrollmentDetailsPage validateStudentDashboardClick(){
+	public StudentEnrollmentDetailsPage verifyStudentDashboardClick(){
 		
 		studentsDashboardButton.click();
 		

@@ -4,7 +4,6 @@ package com.ekalw.qa.pages;
 	import org.testng.annotations.*;
 
 import com.ekalw.qa.base.TestBase;
-
 import static org.testng.Assert.*;
 	import org.openqa.selenium.*;
 	import org.openqa.selenium.firefox.FirefoxDriver;

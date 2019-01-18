@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.ekalw.qa.base.TestBase;
+import com.ekalw.qa.base.TestBase22;
 import com.ekalw.qa.pages.ClusterDetailsPage;
 import com.ekalw.qa.pages.DashBoardPage;
 import com.ekalw.qa.pages.SchoolSummaryPage;
@@ -17,7 +18,7 @@ import com.ekalw.qa.pages.StudentEnrollmentDetailsPage;
 import com.ekalw.qa.pages.TeacherEnrollmentDetailsPage;
 import com.ekalw.qa.pages.WelcomePage;
 
-public class DemoWebTable extends TestBase {
+public class DemoWebTable extends TestBase{
 	
 	WelcomePage welcomepage; // defined here so that we can use it throughout the class here.
 	SignInPage signIn;
@@ -40,7 +41,7 @@ public class DemoWebTable extends TestBase {
 		
 		signIn = welcomepage.validateSignInPage(); // First takes to sign in page
 		dashBoardPage = signIn.signInWithSimsId(prop.getProperty("username"), prop.getProperty("password")); // now sign in page takes to dashboard.
-		clusterDetailsPage = dashBoardPage.validateClusterDashboardClick(); //dashboard takes to clusterdetails page.
+		clusterDetailsPage = dashBoardPage.verifyClusterDashboardClick(); //dashboard takes to clusterdetails page.
 		sleep(5000);
 	}
 
