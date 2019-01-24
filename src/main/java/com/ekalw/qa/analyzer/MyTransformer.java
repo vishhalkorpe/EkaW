@@ -6,9 +6,10 @@ import java.lang.reflect.Method;
 import org.testng.IAnnotationTransformer;
 import org.testng.annotations.ITestAnnotation;
 
-import com.ekalw.qa.base.TestBase22;
+import com.ekalw.qa.base.TestBase;
 
-public class MyTransformer extends TestBase22 implements IAnnotationTransformer {
+
+public class MyTransformer extends TestBase implements IAnnotationTransformer {
 
 	public void transform(ITestAnnotation annotation, Class testClass, Constructor testConstructor, Method testMethod) {
 		// TODO Auto-generated method stub

@@ -12,13 +12,13 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.ekalw.qa.base.TestBase22;
+import com.ekalw.qa.base.TestBase;
 import com.ekalw.qa.demo.TestChk;
 import com.ekalw.qa.util.GTakeScreenshot;
 import com.ekalw.qa.util.JavaScriptExecutorConcept;
 import com.ekalw.qa.util.TestUtil;
 
-public class ClusterDetailsPage extends TestBase22 {
+public class ClusterDetailsPage extends TestBase{
 
 	// Page Factory or Object Repository
 	@FindBy(linkText="Bilgaon")

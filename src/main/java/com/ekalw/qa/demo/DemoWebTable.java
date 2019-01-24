@@ -9,7 +9,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.ekalw.qa.base.TestBase;
-import com.ekalw.qa.base.TestBase22;
 import com.ekalw.qa.pages.ClusterDetailsPage;
 import com.ekalw.qa.pages.DashBoardPage;
 import com.ekalw.qa.pages.SchoolSummaryPage;

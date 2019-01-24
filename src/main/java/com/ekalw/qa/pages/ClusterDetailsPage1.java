@@ -7,9 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.ekalw.qa.base.TestBase22;
+import com.ekalw.qa.base.TestBase;
 
-public class ClusterDetailsPage1 extends TestBase22 {
+public class ClusterDetailsPage1 extends TestBase{
 	
 	//Page repository
 	@FindBy(xpath="//*[@id='root']/div/div[1]/table/tbody/tr")

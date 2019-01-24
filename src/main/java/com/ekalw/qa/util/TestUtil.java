@@ -1,8 +1,8 @@
 package com.ekalw.qa.util;
 
-import com.ekalw.qa.base.TestBase22;
+import com.ekalw.qa.base.TestBase;
 
-public class TestUtil extends TestBase22 {
+public class TestUtil extends TestBase{
 	
 	public static long PAGE_LOAD_TIMEOUT =50;
 	public static long IMPLICIT_WAIT=40;

@@ -4,11 +4,11 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import com.ekalw.qa.base.TestBase22;
+import com.ekalw.qa.base.TestBase;
 
 
 
-public class TestNGCustomListener extends TestBase22 implements ITestListener {
+public class TestNGCustomListener extends TestBase implements ITestListener {
 
 	public void onFinish(ITestContext arg0) {
 		// TODO Auto-generated method stub

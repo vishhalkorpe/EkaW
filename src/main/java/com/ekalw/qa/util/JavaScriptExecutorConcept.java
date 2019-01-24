@@ -16,9 +16,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import com.ekalw.qa.base.TestBase22;
+import com.ekalw.qa.base.TestBase;
 
-public class JavaScriptExecutorConcept extends TestBase22 {
+public class JavaScriptExecutorConcept extends TestBase{
 
 	/*public static void main(String[] args) throws IOException {
 

@@ -3,9 +3,9 @@ package com.ekalw.qa.analyzer;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
 
-import com.ekalw.qa.base.TestBase22;
+import com.ekalw.qa.base.TestBase;
 
-public class RetryAnalyzer extends TestBase22 implements IRetryAnalyzer {
+public class RetryAnalyzer extends TestBase implements IRetryAnalyzer {
 	
 	int counter=0;
 	int retryLimit=1;

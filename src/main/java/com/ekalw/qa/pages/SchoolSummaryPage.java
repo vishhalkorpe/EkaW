@@ -8,9 +8,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.ekalw.qa.base.TestBase22;
+import com.ekalw.qa.base.TestBase;
 
-public class SchoolSummaryPage extends TestBase22 {
+public class SchoolSummaryPage extends TestBase{
 	
 	// Page Factory or Object Repository
 	public final String pageUrl = "/schoolReportDetails";

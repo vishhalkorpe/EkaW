@@ -14,11 +14,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import org.testng.annotations.Test;
 
-import com.ekalw.qa.base.TestBase22;
+import com.ekalw.qa.base.TestBase;
 
 
 
-public class GTakeScreenshot extends TestBase22 {
+public class GTakeScreenshot extends TestBase{
 
 	public static void takeSnapShot(WebDriver driver, String fileWithPath) throws Exception {
 

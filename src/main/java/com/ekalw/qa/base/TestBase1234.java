@@ -25,7 +25,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.ekalw.qa.util.TestUtil;
 
-public class TestBase22 {
+public class TestBase1234 {
 
 	public static WebDriver driver;
 	public static Properties prop;
@@ -34,7 +34,7 @@ public class TestBase22 {
 	public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 
 
-	public TestBase22() {
+	public TestBase1234() {
 
 		prop = new Properties();
 		try {
@@ -48,8 +48,8 @@ public class TestBase22 {
 
 	}
 	
-	public static void initialization() throws MalformedURLException{
-			driver=null;	
+	public static void initialization() throws Exception{
+		 
 		    DesiredCapabilities caps = new DesiredCapabilities();
 		    caps.setCapability("browser", "Chrome");
 		    caps.setCapability("browser_version", "62.0");
