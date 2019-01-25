@@ -1,13 +1,17 @@
 package com.ekalw.qa.pages;
 
+import java.awt.RenderingHints.Key;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Keyboard;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterMethod;
 
+import com.ekalw.qa.adminpages.AdminWelcomePage;
 import com.ekalw.qa.base.TestBase;
 import com.ekalw.qa.util.JavaScriptExecutorConcept;
 
@@ -85,18 +89,176 @@ public class AdminTeacherEnrollmentPage extends TestBase {
 
 	}
 	
-	public boolean clickResetButton(){
+	public void fillDataForTeacherSave() throws InterruptedException{
 		
+		AdminWelcomePage aw = new AdminWelcomePage();
+		aw.fillTeacherInformation();
+		//ckeckValidation();
+		if(ckeckValidation()==true){
+			System.out.println("Saving the form");
+		aw.clickSaveButton();
+		}
+		
+	}
+	
+	public static boolean ckeckValidation(){
+		
+		List<WebElement> listerrors=driver.findElements(By.xpath("//table//span[contains(text(),'invalid') or contains(text(),'cannot') or contains(text(),'12 digit') or contains(text(),'already exists')]"));
+		//This email already exists
+		int errroSize= listerrors.size();
+		
+		boolean flag=false;
+		
+		if(errroSize==0){
+			
+			flag=true;
+			System.out.println("Form filled successfully and so flag is : - "+flag);
+						}
+		
+		else{
+			System.out.println("Form filled has errors and so flag is : - "+flag);
+			}
+		return flag;
+		
+		}
+	
+	
+	public boolean clickResetTeacherEnrollmentFormButton(String firstname,String lastname,String mobilenumber,String emailid,String aadharnumber,String addressline1,String addressline2,String addressline3,String postalcode,String gender,String dob,String slectorganisation,String selectstate){
+		teacherMenu.click();
+		clickOn(driver, addTeacherBtn, 15);
+		addTeacherBtn.click();
+		clickOn(driver, this.firstname, 10);
+		this.firstname.sendKeys(firstname);
+		this.lastname.sendKeys(lastname);
+		this.mobilenumber.sendKeys(mobilenumber);
+		this.emailid.sendKeys(emailid);
+		this.aadharnumber.sendKeys(aadharnumber);
+		this.addressline1.sendKeys(addressline1);
+		this.addressline2.sendKeys(addressline2);
+		this.addressline3.sendKeys(addressline3);
+		this.postalcode.sendKeys(postalcode);
+		sleep(5000);	
+		
+		//********************************gender start >> ONE WAY >> For another way see select organisation +xpath logic
+		
+				genderClick.click();
+				sleep(3000);
+				{
+				if(gender.equals("Male")){
+					
+					WebElement elementgenderToSelect1 =driver.findElement(By.xpath("//ul[@role='listbox']//option[@data-value='Male']"));
+					JavaScriptExecutorConcept.clickElementByJS(elementgenderToSelect1, driver);
+				}
+				else if(gender.equals("Female")){
+					
+					WebElement elementgenderToSelect2 =driver.findElement(By.xpath("//ul[@role='listbox']//option[@data-value='Female']"));
+					JavaScriptExecutorConcept.clickElementByJS(elementgenderToSelect2, driver);
+				}
+				else if(gender.equals("TransGender")){
+					
+					WebElement elementgenderToSelect3 =driver.findElement(By.xpath("//ul[@role='listbox']//option[@data-value='Transgender']"));
+					JavaScriptExecutorConcept.clickElementByJS(elementgenderToSelect3, driver);
+					
+				}
+				else
+					System.out.println("Select gender not specified");
+				}
+				
+				sleep(5000);
+				this.firstname.click();		//click on this to remove control form dropdown
+				
+				//********************************gender end
+				  			 
+				
+				//********************************date start
+				
+				sleep(5000);
+				this.firstname.click();		//click on this to remove control form dropdown
+				
+				WebElement elementdateToSelect =driver.findElement(By.xpath("//input[@type='date']"));
+				elementdateToSelect.click();
+				elementdateToSelect.sendKeys(dob);
+				
+				sleep(5000);
+				this.firstname.click();		//click on this to remove control form dropdown
+				
+				
+				//********************************date end	
+
+
+				
+				//***************************select organization start
+								
+				sleep(5000);
+				this.firstname.click();		//click on this to remove control form dropdown
+				
+				String firstorgXpath="//ul[@role='listbox']//option[text()='";
+				String secondorgXpath="']";
+				String totalorgXpath=firstorgXpath+slectorganisation+secondorgXpath;
+				
+				driver.findElement(By.xpath("//div//label[text()='Select Organisation*']//following::div[1]")).click();
+				// wait for drop down to open
+				sleep(5000);
+				
+				WebElement elementOrganisationToSelect =driver.findElement(By.xpath(totalorgXpath));
+				JavaScriptExecutorConcept.clickElementByJS(elementOrganisationToSelect, driver);
+				
+				sleep(5000);
+				this.firstname.click();			//click on this to remove control form dropdown
+				
+				//********************************select organization end
+				 
+
+				
+				//**************************************select state start
+				sleep(5000);
+				this.addressline1.click();
+				
+				
+				String firstpartstateXpath="//ul[@role='listbox']//option[text()='";
+				String secondpartstateXpath="']";
+				String totalstateXpath=firstpartstateXpath+selectstate+secondpartstateXpath;
+				
+				driver.findElement(By.xpath("//div[text()='Select state']")).click();
+				// wait for drop down to open
+				sleep(5000);
+				
+				WebElement elementstateToSelect =driver.findElement(By.xpath(totalstateXpath));
+				JavaScriptExecutorConcept.clickElementByJS(elementstateToSelect, driver);
+				
+				sleep(5000);
+				this.firstname.click();		//click on this to remove control form dropdown
+				
+				//**************************************select state end
+							
 		driver.findElement(By.xpath("//button//span[text()=' Reset']")).click();
 		
-		return true;
-	}
-	
-	public void clickSaveButton(){
+		System.out.println("Reset button clicked");
 		
+		//this.firstname.click();
+		//this.firstname.sendKeys(Keys.TAB);
+		
+		sleep(5000);
+		
+		driver.findElement(By.xpath("//span[text()='Save']")).click();
+		
+		sleep(5000);
+		
+		if(ckeckValidation()==true){
+			System.out.println("Saving the form");
+			
+			return true;
+		}
+		
+		else{
+			
+			return false;
+		}
 	}
 	
-	public boolean fillTeacherEnrollmentForm(String firstname,String lastname,String mobilenumber,String emailid,String aadharnumber,String addressline1,String addressline2,String addressline3,String postalcode,String gender,String dob,String slectorganisation,String selectstate){
+	/////////////////
+	
+	public boolean clickSaveTeacherEnrollmentFormButton(String firstname,String lastname,String mobilenumber,String emailid,String aadharnumber,String addressline1,String addressline2,String addressline3,String postalcode,String gender,String dob,String slectorganisation,String selectstate){
 		
 		teacherMenu.click();
 		clickOn(driver, addTeacherBtn, 15);
@@ -229,10 +391,24 @@ public class AdminTeacherEnrollmentPage extends TestBase {
 		
 		//**************************************select state end
 		
-		return true;
+		sleep(5000);
+		driver.findElement(By.xpath("//span[text()='Save']")).click();
 		
+		sleep(5000);
+		
+		if(ckeckValidation()==true){
+			System.out.println("Saving the form");
+			
+			return true;
 		}
 		
+		else{
+			
+			return false;
+		}
+			
+		}
+
 		
 	}
 
