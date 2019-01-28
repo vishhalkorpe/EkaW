@@ -87,6 +87,22 @@ public class AdminTeacherEnrollmentPageTest extends TestBase {
 
 	    }
 	
+	@Test(priority=6,dependsOnMethods = "clickAddTeacherTest")
+	public void verifySearchTeacherByEmailidTest(){
+		atep.verifyclickOnTeacherMenu();
+		Assert.assertTrue(atep.validateTeacherSearchByEmaiid());
+		
+		
+	}
+	
+	@Test(priority=7,dependsOnMethods = "clickAddTeacherTest")
+	public void verifysearchTeacherBynameTest(){
+		atep.verifyclickOnTeacherMenu();
+		Assert.assertTrue(atep.validatesearchTeacherByname());
+		
+		
+	}
+	
 	@AfterMethod
 	public void tearDown() throws InterruptedException {
 		Thread.sleep(5000);

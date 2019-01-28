@@ -408,6 +408,108 @@ public class AdminTeacherEnrollmentPage extends TestBase {
 		}
 			
 		}
+	
+	public boolean validateTeacherSearchByEmaiid(){
+		
+		String emailid = "sj@sj.com";
+		
+		driver.findElement(By.xpath("//input[@id='filter']")).click();
+		sleep(5000);
+		driver.findElement(By.xpath("//input[@id='filter']")).sendKeys(emailid);
+		sleep(5000);
+
+		String bxpath = "//div[@class='rt-tbody']//div[@role='rowgroup']//div[@class='rt-td' and contains( text(),'";
+		String axpath = "')]";
+		String actualxpath = bxpath + emailid + axpath;
+		
+
+		List<WebElement> listFound = driver.findElements(By.xpath(actualxpath));
+
+		int listSize = listFound.size();
+		if (listSize == 0 ) {
+
+			System.out.println("No Teacher available with emailid: "+emailid);
+			
+			return false;
+
+		}
+		else if(listSize>1){
+			
+			System.out.println("Duplicate data found");
+			
+			return false;
+		}
+
+		else{
+			
+			System.out.println(+listSize+" :Teacher found with emailid:- "+emailid);
+
+			for (WebElement webElement : listFound) {
+
+				String foundnamedata = webElement.getText();
+
+				if (foundnamedata.contains(emailid)) {
+					System.out.println("Teachers found successfully");
+					
+					return true;
+				} else {
+					System.out.println("Teacher not found");
+					
+					return false;
+				}
+
+			}
+		}
+		return false;
+		
+	}
+	
+	//NOTE:- SORTED USING NUMBER OF LINKS "NOT SURE""""""""""""""""""" JUSt A TRY
+	public boolean validatesearchTeacherByname(){
+
+		String name = "Test";
+		
+		driver.findElement(By.xpath("//input[@id='filter']")).click();
+		sleep(5000);
+		driver.findElement(By.xpath("//input[@id='filter']")).sendKeys(name);
+		sleep(5000);
+
+		String bxpath = "//div[@class='rt-tbody']//div[@role='rowgroup']//div[@class='rt-td' and contains( text(),'";
+		String axpath = "')]";
+		String actualxpath = bxpath + name + axpath;
+		
+	
+		List<WebElement> listlinks = driver.findElements(By.xpath("//div[@class='rt-td']//a[1]"));
+		
+		
+		int listlinksize=listlinks.size();
+		
+		if(listlinksize==1){
+			
+			System.out.println("One Teacher found, results pass");
+			return true;
+			
+		}
+				
+		if(listlinksize>1){
+			
+			System.out.println("More than one teacher found, results fail");
+			
+			for(int i=1; i<=listlinksize;i++){
+				
+				String b2xapth="//div[@class='rt-tbody']//div[";
+				String a2xpath="]//div//div[1]";
+				String actual2xpath=b2xapth+i+a2xpath;
+				
+				WebElement we=driver.findElement(By.xpath(actual2xpath));
+				System.out.println(we.getText());
+				
+			}
+			return false;
+		}
+		return false;
+
+	}
 
 		
 	}
