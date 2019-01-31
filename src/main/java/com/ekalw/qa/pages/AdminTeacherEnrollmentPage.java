@@ -13,6 +13,7 @@ import org.testng.annotations.AfterMethod;
 
 import com.ekalw.qa.adminpages.AdminWelcomePage;
 import com.ekalw.qa.base.TestBase;
+import com.ekalw.qa.util.GTakeScreenshot;
 import com.ekalw.qa.util.JavaScriptExecutorConcept;
 
 public class AdminTeacherEnrollmentPage extends TestBase {
@@ -20,32 +21,42 @@ public class AdminTeacherEnrollmentPage extends TestBase {
 	public final String pageLoadedTextTeachers = "Teacher Information";
 	public final String pageUrlTeachers = "/teachers";
 
-	// Page Factory or Object Repository
-	@FindBy(xpath = "//div//label[text()='First Name*']//following::input[@id='outlined-name']")
+	// Page Factory or Object Repository 
+	
+	//@FindBy(xpath = "//div//label[text()='First Name*']//following::input[@id='outlined-name']")
+	@FindBy(xpath = "//input[@id='firstName']")
 	WebElement firstname;
 
-	@FindBy(xpath = "//div//label[text()='Last Name*']//following::input[@id='outlined-name']")
+	//@FindBy(xpath = "//div//label[text()='Last Name*']//following::input[@id='outlined-name']")
+	@FindBy(xpath = "//input[@id='lastName']")
 	WebElement lastname;
 
-	@FindBy(xpath = "//div//label[text()='Mobile number*']//following::input[@id='outlined-name']")
+	//@FindBy(xpath = "//div//label[text()='Mobile number*']//following::input[@id='outlined-name']")
+	@FindBy(xpath = "//input[@id='phone']")
 	WebElement mobilenumber;
 
-	@FindBy(xpath = "//div//label[text()='Email-Id*']//following::input[@id='outlined-name']")
+	//@FindBy(xpath = "//div//label[text()='Email-Id*']//following::input[@id='outlined-name']")
+	@FindBy(xpath = "//input[@id='email']")
 	WebElement emailid;
 
-	@FindBy(xpath = "//div//label[text()='Aadhar Number']//following::input[@id='outlined-name']")
+	//@FindBy(xpath = "//div//label[text()='Aadhar Number']//following::input[@id='outlined-name']")
+	@FindBy(xpath = "//input[@id='aadhaarNumber']")
 	WebElement aadharnumber;
 
-	@FindBy(xpath = "//div//label[text()='Address Line 1']//following::input[@id='outlined-name']")
+	//@FindBy(xpath = "//div//label[text()='Address Line 1']//following::input[@id='outlined-name']")
+	@FindBy(xpath = "//input[@id='addressLine1']")
 	WebElement addressline1;
 
-	@FindBy(xpath = "//div//label[text()='Address Line 2']//following::input[@id='outlined-name']")
+	//@FindBy(xpath = "//div//label[text()='Address Line 2']//following::input[@id='outlined-name']")
+	@FindBy(xpath = "//input[@id='addressLine2']")
 	WebElement addressline2;
 
-	@FindBy(xpath = "//div//label[text()='Address Line 3']//following::input[@id='outlined-name']")
+	//@FindBy(xpath = "//div//label[text()='Address Line 3']//following::input[@id='outlined-name']")
+	@FindBy(xpath = "//input[@id='addressLine3']")
 	WebElement addressline3;
 
-	@FindBy(xpath = "//div//label[text()='Postal code(PIN)']//following::input[@id='outlined-name']")
+	//@FindBy(xpath = "//div//label[text()='Postal code(PIN)']//following::input[@id='outlined-name']")
+	@FindBy(xpath = "//input[@id='postCode']")
 	WebElement postalcode;
 
 	@FindBy(xpath = "//div[@data-item='Teachers']")
@@ -55,6 +66,7 @@ public class AdminTeacherEnrollmentPage extends TestBase {
 	WebElement addTeacherBtn;
 	
 	@FindBy(xpath="//div[text()='Select gender']")
+	//@FindBy(xpath = "//input[@id='gender']")
 	WebElement genderClick;
 	
 	@FindBy(xpath="//ul[@role='listbox']//option[@data-value]")
@@ -509,6 +521,78 @@ public class AdminTeacherEnrollmentPage extends TestBase {
 		}
 		return false;
 
+	}
+	
+	public boolean deleteTeacherRandom(){
+
+		List<WebElement> rows = driver.findElements(By.xpath("//div[@class='rt-tbody']//div//div[@role='row']"));
+		int rowCount = rows.size();
+		System.out.println("Total rows in table is " + rowCount);
+
+		String row4used = "//div[@class='rt-tbody']//div[3]/div[@role='row']/following::div[5]";
+		
+		String followingpath = "//following::a[starts-with(@id, 'Delete')][1]";
+		
+		String actualTeacherused = driver.findElement(By.xpath(row4used)).getText();
+		
+		System.out.println("Teacher used is " + actualTeacherused);
+
+		WebElement ele = driver.findElement(By.xpath(row4used));
+	 
+		boolean flag;
+		
+		// -->> now robot have to click hyperlinks 'Delete' // Count' of 'Cluster Head' used above. <<--//
+		//for(int i=1;i<=2;i++){
+		
+		if(ele.getText().contains(actualTeacherused)){
+
+			driver.findElement(By.xpath(row4used + followingpath)).click();
+			sleep(5000);
+			driver.findElement(By.xpath("//div[@role='alert']//button//span[text()='Yes']")).click();
+			sleep(5000);
+			System.out.println("Teacher is deleted.");
+		flag=true;
+			}
+		else{
+				System.out.println("Teacher not found.");
+				flag=false;
+			}
+		
+		System.out.println("Recheking Teacher delete operation.");
+		
+		if(ele.getText().contains(actualTeacherused)){
+
+			System.out.println("Confirmed teacher is not deleted.");
+		flag=false;
+			}
+		else{
+				System.out.println("Confirmed teacher is deleted.");
+				flag=true;
+			}
+			
+		//}
+		/*if(flag=true){
+			
+			System.out.println("Reconfirming delete");
+			String rechkactualTeacherused=driver.findElement(By.xpath(row4used)).getText();
+			
+			if(rechkactualTeacherused==actualTeacherused){
+				
+				System.out.println("Reconfirmed teacher is deleted.PASSED");
+				flag=true;
+				
+			}else{
+				
+				System.out.println("Reconfirmed teacher not deleted");
+				flag=false;
+				}
+		}
+		else{
+			
+			System.out.println("Reconfirmed delete failed");
+		}*/
+		
+		return flag;
 	}
 
 		

@@ -35,7 +35,8 @@ public class WelcomePageTest extends TestBase{
 		welcomepage = new WelcomePage(); // so that we can access all methods of WelcomePage class
 	}
 
-	@Test(priority=1)
+	@Test(enabled = false)
+	//@Test(priority=1)
 	public void validateWelcomePageTitleTest() throws Exception {
 
 		String title = welcomepage.validateWelcomePageTitle();
@@ -56,7 +57,7 @@ public class WelcomePageTest extends TestBase{
 	}
 	
 	//@Test(enabled = false)
-	@Test(priority=3)
+	//@Test(priority=3)
 	public void validateSignInPageTest(){
 		System.out.println("validateSignInPageTest");
 		signIn = welcomepage.validateSignInPage();

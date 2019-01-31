@@ -31,11 +31,11 @@ public class AdminWelcomePage {
 		System.out.println("*******ADMIN PAGE*******");
 		
 		AdminWelcomePage aw = new AdminWelcomePage();
-		//aw.fillTeacherInformation();
+		aw.fillTeacherInformation();
 		//aw.clickResetButton();
 		//aw.clickSaveButton();
 		//aw.fillDataForTeacherReset();
-		aw.fillDataForTeacherSave();
+		//aw.fillDataForTeacherSave();
 		//ckeckValidation();
 
 	}
@@ -50,6 +50,12 @@ public class AdminWelcomePage {
 	public void fillTeacherInformation() throws InterruptedException{
 		
 	System.out.println("Fillinf teacher information");
+	
+	getXpath("//div//button[@id='addTeacher']").click();
+	Thread.sleep(5000);
+	
+	getXpath("//div//input[@id='selectOrgid']//preceding::div[1]").click();
+	Thread.sleep(5000);
 	
 	getXpath("//div//label[text()='First Name*']//following::input[@id='outlined-name']").clear();
 	getXpath("//div//label[text()='First Name*']//following::input[@id='outlined-name']").sendKeys("First Name");

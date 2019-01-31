@@ -47,8 +47,9 @@ public class WelcomePage extends TestBase{
      */
 	public boolean validatePageLoaded(){ 
 		
-		String pageLoadedText = "Welcome to SIMS-I Reporting Tool";
-	
+		//String pageLoadedText = "Welcome to SIMS-I Reporting Tool";
+		String pageLoadedText = "Welcome to SIMS Admin Portal";
+		
 		return driver.getPageSource().contains(pageLoadedText);
 				                
             }
