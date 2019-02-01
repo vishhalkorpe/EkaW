@@ -45,8 +45,8 @@ public class AdminTeacherEnrollmentPageTest extends TestBase {
 
 	}
 	
-	@Test(enabled=false)
-	//@Test(priority=1)
+	//@Test(enabled=false)
+	@Test(priority=1)
 	public void verifyLoginPageTitleTest(){
 		
 		String loginPageTitleexpected="Home";
@@ -56,15 +56,15 @@ public class AdminTeacherEnrollmentPageTest extends TestBase {
 		Assert.assertEquals(actual,loginPageTitleexpected);
 	}
 	
-	@Test(enabled=false)
-	//@Test(priority=2)
+	//@Test(enabled=false)
+	@Test(priority=2)
 	public void verifyclickOnTeacherMenuTest(){
 		
 		Assert.assertTrue(atep.verifyclickOnTeacherMenu());
 	}
 	
-	@Test(enabled=false)
-	//@Test(priority=3,dependsOnMethods = "verifyclickOnTeacherMenuTest")
+	//@Test(enabled=false)
+	@Test(priority=3,dependsOnMethods = "verifyclickOnTeacherMenuTest")
 	public void clickAddTeacherTest(){
 		
 		Assert.assertTrue(atep.clickAddTeacher());
@@ -85,8 +85,8 @@ public class AdminTeacherEnrollmentPageTest extends TestBase {
 	}
 	
 	//@Test(enabled=false)
-	@Test(dataProvider="getResetTeacherData")
-	//@Test(priority=4,dataProvider="getResetTeacherData",dependsOnMethods = "clickAddTeacherTest")
+	//@Test(dataProvider="getResetTeacherData")
+	@Test(priority=4,dataProvider="getResetTeacherData",dependsOnMethods = "clickAddTeacherTest")
 	public void clickResetTeacherEnrollmentFormButtonTest(String firstname,String lastname,String mobilenumber,String emailid,String aadharnumber,String addressline1,String addressline2,String addressline3,String postalcode,String gender,String dob,String slectorganisation,String selectstate){
 		
 		Assert.assertEquals((atep.clickResetTeacherEnrollmentFormButton(firstname, lastname, mobilenumber, emailid, aadharnumber, addressline1, addressline2, addressline3, postalcode, gender, dob, slectorganisation, selectstate)),false);
@@ -102,8 +102,8 @@ public class AdminTeacherEnrollmentPageTest extends TestBase {
 
 	    }
 	
-	@Test(enabled=false)
-	//@Test(priority=6,dependsOnMethods = "clickAddTeacherTest")
+	//@Test(enabled=false)
+	@Test(priority=6,dependsOnMethods = "clickAddTeacherTest")
 	public void verifySearchTeacherByEmailidTest(){
 		atep.verifyclickOnTeacherMenu();
 		Assert.assertTrue(atep.validateTeacherSearchByEmaiid());
@@ -111,8 +111,8 @@ public class AdminTeacherEnrollmentPageTest extends TestBase {
 		
 	}
 	
-	@Test(enabled=false)
-	//@Test(priority=7,dependsOnMethods = "clickAddTeacherTest")
+	//@Test(enabled=false)
+	@Test(priority=7,dependsOnMethods = "clickAddTeacherTest")
 	public void verifysearchTeacherBynameTest(){
 		atep.verifyclickOnTeacherMenu();
 		Assert.assertTrue(atep.validatesearchTeacherByname());
@@ -120,8 +120,8 @@ public class AdminTeacherEnrollmentPageTest extends TestBase {
 		
 	}
 	
-	@Test(enabled=false)
-	//@Test(priority=8,dependsOnMethods = "verifyclickOnTeacherMenuTest")
+	//@Test(enabled=false)
+	@Test(priority=8,dependsOnMethods = "verifyclickOnTeacherMenuTest")
 	public void deleteTeacherRandomTest(){
 		atep.verifyclickOnTeacherMenu();
 		Assert.assertTrue(atep.deleteTeacherRandom());

@@ -106,6 +106,8 @@ public class TestBase {
 			return wait.until(ExpectedConditions.titleContains(title));
 		}
 	   
+	    
+	   	   
 	   //*Sleep script for the specified length Generally for testcase trial
 	   public static void sleep(long length){
 		    try {
