@@ -14,7 +14,7 @@ import com.ekalw.qa.pages.AdminTeacherEnrollmentPage;
 import com.ekalw.qa.pages.DashBoardPage;
 import com.ekalw.qa.pages.SignInPage;
 import com.ekalw.qa.pages.WelcomePage;
-import com.ekalw.qa.util.TeachersDataUtil;
+import com.ekalw.qa.util.SIMSWebDataUtil;
 
 public class AdminTeacherEnrollmentPageTest extends TestBase {
 	
@@ -73,14 +73,14 @@ public class AdminTeacherEnrollmentPageTest extends TestBase {
 	@DataProvider
 	public Iterator<Object[]> getTestTeacherData(){
 		
-		ArrayList<Object[]> testDataTeacher= TeachersDataUtil.getTeacherSaveDataFromExcel();
+		ArrayList<Object[]> testDataTeacher= SIMSWebDataUtil.getTeacherSaveDataFromExcel();
 		return testDataTeacher.iterator();
 	}
 	
 	@DataProvider
 	public Iterator<Object[]> getResetTeacherData(){
 		
-		ArrayList<Object[]> testDataTeacher= TeachersDataUtil.getTeacherResetDataFromExcel();
+		ArrayList<Object[]> testDataTeacher= SIMSWebDataUtil.getTeacherResetDataFromExcel();
 		return testDataTeacher.iterator();
 	}
 	

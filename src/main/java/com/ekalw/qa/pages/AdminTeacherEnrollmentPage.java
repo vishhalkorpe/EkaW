@@ -101,7 +101,8 @@ public class AdminTeacherEnrollmentPage extends TestBase {
 
 	}
 	
-	public void fillDataForTeacherSave() throws InterruptedException{
+	//Just test
+	/*public void fillDataForTeacherSave() throws InterruptedException{
 		
 		AdminWelcomePage aw = new AdminWelcomePage();
 		aw.fillTeacherInformation();
@@ -111,7 +112,7 @@ public class AdminTeacherEnrollmentPage extends TestBase {
 		aw.clickSaveButton();
 		}
 		
-	}
+	}*/
 	
 	public static boolean ckeckValidation(){
 		
